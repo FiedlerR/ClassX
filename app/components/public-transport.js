@@ -9,6 +9,4 @@ app.component("publicTransport", {
 
 app.controller("PublicTransportController", function ($log) {
 
-    $log.debug("PublicTransportController()");
-
 });

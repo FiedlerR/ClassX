@@ -15,13 +15,22 @@ app.controller("TramController", function ($log) {
             line: "71",
             destination: "Oper",
             time: "13:37",
-            delay: "+1"
+            delay: "+1",
+            trafficJam: false
         },
         {
             line: "18",
             destination: "Schlachthausgasse",
             time: "13:39",
-            delay: "0"
+            delay: "0",
+            trafficJam: true
+        },
+        {
+            line: "18",
+            destination: "Schlachthausgasse",
+            time: "13:41",
+            delay: "0",
+            trafficJam: false
         }
     ];
 });

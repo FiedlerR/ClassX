@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Regular.ttf") format('ttf');
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Bold.ttf") format('ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-BoldItalic.ttf") format('ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-ExtraBold.ttf") format('ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf") format('ttf');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Italic.ttf") format('ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Light.ttf") format('ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-LightItalic.ttf") format('ttf');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-SemiBold.ttf") format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf") format('ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+* {
+    color: #e3e3e3;
+}
+
+hr {
+    border: 0;
+    background-color: #34495e;
+    height: 1px;
+}
+
+body {
+    background-color: #161e27;
+}
+
+md-content {
+    background: none;
+}
+
+md-card {
+    background: linear-gradient(100deg, rgba(71,94,117,1) 0%, rgba(52,73,94,1) 100%);
+}
+
+tram p {
+    font-size: 32px;
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+.trainEntry {
+    margin: 0;
+}
