@@ -63,6 +63,7 @@
 
 * {
     color: #e3e3e3;
+    font-family: 'Open Sans', serif;
 }
 
 hr {
@@ -80,15 +81,43 @@ md-content {
 }
 
 md-card {
-    background: linear-gradient(100deg, rgba(71,94,117,1) 0%, rgba(52,73,94,1) 100%);
+    background: linear-gradient(115deg, #475e75 0%, #34495e 100%);
+    border-radius: 0;
 }
 
-tram p {
+.appletText {
     font-size: 32px;
     margin: 0;
-    font-family: 'Open Sans';
+    font-weight: 100;
 }
 
 .trainEntry {
     margin: 0;
+}
+
+.trainDestination {
+    text-align: end;
+}
+
+.appletTitle {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 0.5em;
+}
+
+.appletSideInformation {
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.appletWarning {
+    font-weight: 500;
+    color: #e24c4b;
+}
+
+.pageTitle {
+    font-weight: 500;
+    font-size: 60px;
+    margin: 0;
+    margin-left: 8px;
 }

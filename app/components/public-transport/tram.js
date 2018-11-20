@@ -4,12 +4,13 @@ app.component("tram", {
     templateUrl: "components/public-transport/tram.html",
     controller: "TramController",
     bindings: {
-        station: "@",
+        rbl: "@"
     }
 });
 
 
 app.controller("TramController", function ($log) {
+    this.station = "Oberzellergasse";
     this.trains = [
         {
             line: "71",
