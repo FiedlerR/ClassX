@@ -1,7 +1,7 @@
 "use strict";
 
 // Einziges Modul dieser App und seine Abhängigkeiten
-var app = angular.module("Vorlage", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize",
+var app = angular.module("Vorlage", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",
     "ngAnimate", "ngMaterial", "ui.router" ]);
 
 
@@ -13,6 +13,51 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider)
     $qProvider.errorOnUnhandledRejections(false);
 });
 
+//
+var index = 0;
+app.config(function($routeProvider) {
+    $routeProvider
+        .when("/id0", {
+            templateUrl : "index0.html"
+        }).when("/id1", {
+        templateUrl : "index1.html"
+    });
+});
+setInterval(function(){ window.location.href="#!id"+index; if(index < 1){index++}else{index = 0;}}, 5000);
+
+//
+app.controller('cryptoController', function($scope, $http) {
+    $http.get("https://api.cryptonator.com/api/full/btc-eur")
+        .then(function(response) {
+            $scope.bitcoin = response.data;
+        });
+    $http.get("https://api.cryptonator.com/api/full/ETH-eur")
+        .then(function(response) {
+            $scope.ethereum = response.data;
+        });
+    $http.get("https://api.cryptonator.com/api/full/xrp-eur")
+        .then(function(response) {
+            $scope.ripple = response.data;
+        });
+    $http.get("https://api.cryptonator.com/api/full/BCH-eur")
+        .then(function(response) {
+            $scope.bitcoinCash = response.data;
+        });
+});
+
+//
+app.controller('wienerLinienController', function($scope, $http) {
+    $http.get("https://www.wienerlinien.at/ogd_realtime/monitor?rbl=4915&rbl=4902&activateTrafficInfo=stoerungkurz&" +
+        "activateTrafficInfo=stoerunglang&activateTrafficInfo=aufzugsinfo&sender=rdWGw7kFZ6gPCNsF")
+        .then(function(response) {
+            $scope.metro = response.data;
+        });
+    $http.get("http://www.wienerlinien.at/ogd_realtime/monitor?rbl=2044&rbl=2015&rbl=293&rbl=284&activateTrafficInfo=stoerungkurz&" +
+        "activateTrafficInfo=stoerunglang&activateTrafficInfo=aufzugsinfo&sender=rdWGw7kFZ6gPCNsF")
+        .then(function(response) {
+            $scope.tram = response.data;
+        });
+});
 
 // Thema einstellen, mögliche Paletten sind:
 // red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green,

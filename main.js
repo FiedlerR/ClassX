@@ -8,6 +8,7 @@ function createWindow () {
         width: 600,
         height: 600,
         backgroundColor: '#ffffff',
+        "web-preferences": { "web-security": false }
         //icon: `file://${__dirname}/dist/assets/logo.png`
     })
 
