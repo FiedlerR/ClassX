@@ -1,15 +1,15 @@
-<md-card md-theme-watch>
+<md-card md-theme-watch >
     <md-card-content layout="column" layout-margin>
         <p class="appletTitle">{{$ctrl.station}}</p>
-        <div class="trainEntry" ng-repeat="train in $ctrl.trains | limitTo: 5" layout="column">
+        <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 5" layout="column">
             <div layout="row">
-                <p class="appletText" flex="20">{{train.time}} <span class="appletSideInformation">({{train.delay}})</span></p>
+                <p class="appletText" flex="25">{{train.time}} <span class="appletSideInformation">({{train.delay}})</span></p>
                 <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam">Stau</p>
                 <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
                 <p class="appletText" flex="10">{{train.line}}</p>
                 <p class="trainDestination appletText" flex>{{train.destination}}</p>
             </div>
-            <hr ng-hide="$last" style="width: 100%;">
+            <hr ng-hide="$last">
         </div>
     </md-card-content>
 </md-card>

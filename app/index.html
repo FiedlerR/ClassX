@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="vendor/material-icons-3.0.1/material-icons.css">
     <link rel="stylesheet" href="vendor/roboto/roboto.css">
+
+    <link href="fonts/OpenSans/OpenSans-Regular.ttf">
   
     <link rel="stylesheet" href="vendor/angular-material-1.1.10/angular-material.min.css">
   
@@ -36,11 +38,13 @@
 
     <script src="components/public-transport.js"></script>
     <script src="components/public-transport/tram.js"></script>
+    <script src="components/infobar.js"></script>
   </head>
 
-  <body layout="column" ng-cloak>
+  <body layout="column">
     <md-content>
       <public-transport></public-transport>
+      <infobar></infobar>
     </md-content>
     <!--<div class="page" ng-view></div>!-->
   </body>
