@@ -13,10 +13,6 @@ app.controller("InfobarController", function ($scope, $interval) {
         this.time = moment().format("HH:mm:ss");
     };
 
-    $onChanges = () => {
-
-    };
-
     this.$onInit = this.refreshTime;
     $interval(this.refreshTime, 1000);
 });
