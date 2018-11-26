@@ -12,6 +12,7 @@ angular.module("Vorlage").component("wienerLinien", {
 
 
 app.controller("WienerLinienController", function ($scope, $interval, $http) {
+    this.lines = [];
     this.$onInit = () => {
         if(this.rbls == null) {
             this.rblss = "";
@@ -42,7 +43,10 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
                             var dateReal = datePlanned;
                         }
 
-                        this.trains.push({
+                        if(this.lines.indexOf(y.name) === -1) {
+                            this.lines.push(y.name);
+                        }
+                            this.trains.push({
                             line: y.name,
                             destination: y.towards,
                             time: dateReal,
@@ -57,7 +61,7 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
             this.trains.sort((x,y) => {
                 return x.time - y.time;
             });
-
+            console.log(this.trains);
             this.reqEvent({
                 success: true,
                 component: this

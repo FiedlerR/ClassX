@@ -67,7 +67,15 @@ hr {
     width: 100%;
 }
 
+
 body {
+    background-color: #161e27;
+    /*padding: 50px;
+    padding-bottom: 20px;*/
+}
+
+
+.pageBody {
     background-color: #161e27;
     padding: 50px;
     padding-bottom: 20px;
@@ -117,6 +125,15 @@ md-card {
     font-size: 20px;
 }
 
+.appletStationLineText {
+    font-size: 40px;
+}
+.appletStationLines {
+    font-size: 36px;
+    text-align: center;
+}
+
+
 .appletWarning {
     font-weight: 500;
     color: #e24c4b;
@@ -127,4 +144,11 @@ md-card {
     font-size: 60px;
     margin: 0;
     margin-left: 8px;
+}
+
+.staticBox{
+    position:absolute;
+    bottom:0;
+    heigh:100%;
+    width: 100%;
 }

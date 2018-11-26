@@ -22,9 +22,11 @@ app.config(function($routeProvider) {
             templateUrl : "index0.html"
         }).when("/id1", {
         templateUrl : "index1.html"
+    }).when("/id2", {
+        templateUrl : "index2.html"
     });
 });
-setInterval(function(){ window.location.href="#!id"+index; if(index < 1){index++}else{index = 0;}}, 5000);
+setInterval(function(){ window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}}, 5000);
 
 //
 
