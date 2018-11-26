@@ -6,11 +6,12 @@ var app = angular.module("Vorlage", [ "ngResource", "ngMessages", "ngLocale", "n
 
 
 // Einstellungen für Debugging
-app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider) {
+app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider, $httpProvider) {
     $logProvider.debugEnabled(true);
     $compileProvider.debugInfoEnabled(true);
     $mdAriaProvider.disableWarnings();
     $qProvider.errorOnUnhandledRejections(false);
+    $httpProvider.defaults.useXDomain = true;
 });
 
 //

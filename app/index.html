@@ -36,14 +36,15 @@
 
     <script src="app.js"></script>
 
-    <script src="components/public-transport.js"></script>
-    <script src="components/public-transport/tram.js"></script>
+    <script src="components/wiener-linien.js"></script>
     <script src="components/infobar.js"></script>
   </head>
 
   <body layout="column">
     <md-content>
-      <public-transport></public-transport>
+      <wiener-linien station="Kardinal-Nagl-Platz" rbls="4915,4902" req-event=""></wiener-linien>
+      <wiener-linien station="Oberzellergasse" rbls="2044,2015" req-event=""></wiener-linien>
+      <wiener-linien station="St. Marx" rbls="293,284" req-event=""></wiener-linien>
       <infobar></infobar>
     </md-content>
     <!--<div class="page" ng-view></div>!-->
