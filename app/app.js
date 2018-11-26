@@ -27,6 +27,7 @@ app.config(function($routeProvider) {
 setInterval(function(){ window.location.href="#!id"+index; if(index < 1){index++}else{index = 0;}}, 5000);
 
 //
+
 app.controller('cryptoController', function($scope, $http) {
     $http.get("https://api.cryptonator.com/api/full/btc-eur")
         .then(function(response) {

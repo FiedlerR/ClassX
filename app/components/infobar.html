@@ -1,7 +1,7 @@
 <md-card md-theme-watch>
     <md-card-content layout="row" class="noborder" layout-align="space-between center">
         <p class="appletText">{{$ctrl.time}}</p>
-        <p class="appletSideInformation appletWarning">Einige Informationen sind möglichwerweise nicht aktuell!</p>
+        <p class="appletSideInformation appletWarning" ng-if="$ctrl.displayError">Einige Informationen sind möglichwerweise nicht aktuell!</p>
         <p class="appletText">._.</p>
     </md-card-content>
 </md-card>
