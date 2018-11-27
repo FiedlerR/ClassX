@@ -9,5 +9,4 @@ angular.module("Vorlage").component("crypto", {
 
 app.controller("CryptoController", function ($scope, $interval) {
 
-    $interval(this.refreshTime, 1000);
 });
