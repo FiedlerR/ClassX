@@ -96,6 +96,10 @@ md-card {
     font-weight: 100;
 }
 
+.appletSemiSide {
+    font-size: 26px;
+}
+
 .nomargin {
     margin: 0;
 }
@@ -147,8 +151,8 @@ md-card {
 }
 
 .staticBox{
-    position:absolute;
-    bottom:0;
-    heigh:100%;
+    position: absolute;
+    bottom: 0;
+    heigh: 100%;
     width: 100%;
 }
