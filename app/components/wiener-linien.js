@@ -52,7 +52,8 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
                             time: dateReal,
                             timeString: ("0" + dateReal.getHours()).substr(-2) + ":" + ("0" + dateReal.getMinutes()).substr(-2),
                             delay: z.departureTime.countdown,
-                            trafficJam: y.trafficJam
+                            trafficJam: y.trafficJam,
+                            symbolType: (y.type === "ptTram" || y.type === "ptMetro") ? "images/train.svg" : "images/bus.svg"
                         });
                     });
                 });
@@ -61,7 +62,6 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
             this.trains.sort((x,y) => {
                 return x.time - y.time;
             });
-            console.log(this.trains);
             this.reqEvent({
                 success: true,
                 component: this

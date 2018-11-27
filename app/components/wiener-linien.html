@@ -3,12 +3,15 @@
     <div layout="row" >
         <md-card md-theme-watch flex="70">
             <md-card-content layout="column" layout-margin >
-                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 5" layout="column">
+                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 10" layout="column">
                     <div layout="row">
                         <p class="appletText" flex="25">{{train.timeString}} <span class="appletSideInformation">({{train.delay}})</span></p>
                         <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam">Stau</p>
                         <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
-                        <p class="appletText" flex="10">{{train.line}}</p>
+                        <div flex="10" layout="row"  layout-align="center center">
+                            <p class="appletText" >{{train.line}}</p>
+                            <img src="{{train.symbolType}}" width="26" height="32">
+                        </div>
                         <p class="trainDestination appletText" flex>{{train.destination}}</p>
                     </div>
                     <hr ng-hide="$last">
@@ -23,6 +26,7 @@
                 <div class="nomargin" ng-repeat="line in $ctrl.lines">
                     <p class="appletStationLines">{{line}}</p>
                 </div>
+                <div style="height:100%;"></div>
             </md-card-content>
         </md-card>
     </div>
