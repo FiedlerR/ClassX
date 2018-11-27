@@ -134,6 +134,10 @@ md-card {
     text-align: center;
 }
 
+.appletBox {
+    background-color: #2C3E50;
+}
+
 .appletLineBox {
     background-color: #2C3E50;
     margin: 0;
@@ -168,6 +172,5 @@ md-card {
 .staticBox{
     position: absolute;
     bottom: 0;
-    heigh: 100%;
     width: 100%;
 }

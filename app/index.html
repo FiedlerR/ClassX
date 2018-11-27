@@ -38,13 +38,15 @@
 
     <script src="components/wiener-linien.js"></script>
     <script src="components/infobar.js"></script>
+    <script src="components/crypto.js"></script>
+    <script src="components/time-table.js"></script>
   </head>
 
   <body layout="column">
     <md-content>
-      <!-- <wiener-linien station="Kardinal-Nagl-Platz" rbls="4915,4902" req-event=""></wiener-linien> !-->
+      <time-table></time-table>
     </md-content>
-    <div class="page" ng-view></div>
+    <!--<div class="page" ng-view></div>-->
     <infobar display-error=""></infobar>
   </body>
 </html>
