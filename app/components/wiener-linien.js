@@ -6,6 +6,7 @@ angular.module("Vorlage").component("wienerLinien", {
     bindings: {
         rbls: "@",
         station: "@",
+        image: "@",
         reqEvent: "&"
     }
 });
@@ -13,6 +14,7 @@ angular.module("Vorlage").component("wienerLinien", {
 
 app.controller("WienerLinienController", function ($scope, $interval, $http) {
     this.lines = [];
+    this.alreadySet = [];
     this.$onInit = () => {
         if(this.rbls == null) {
             this.rblss = "";
@@ -43,9 +45,18 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
                             var dateReal = datePlanned;
                         }
 
-                        if(this.lines.indexOf(y.name) === -1) {
+                        /*if(this.lines.indexOf(y.name) === -1) {
                             this.lines.push(y.name);
+                        }*/
+                        if(this.alreadySet.indexOf(y.name) === -1) {
+                            this.alreadySet.push(y.name);
+                            this.lines.push({
+                                name: y.name,
+                                symbolType: (y.type === "ptTram" || y.type === "ptMetro") ? "images/train.svg" : "images/bus.svg"
+                            });
+                            //this.lines.push(y.name);
                         }
+
                             this.trains.push({
                             line: y.name,
                             destination: y.towards,

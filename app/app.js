@@ -17,6 +17,9 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider,
 //
 var index = 0;
 app.config(function($routeProvider) {
+    document.addEventListener("keydown", (event) => {
+        window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}
+    });
     $routeProvider
         .when("/id0", {
             templateUrl : "index0.html"
@@ -48,6 +51,8 @@ app.controller('cryptoController', function($scope, $http) {
             $scope.bitcoinCash = response.data;
         });
 });
+
+
 
 //
 app.controller('wienerLinienController', function($scope, $http) {

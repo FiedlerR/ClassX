@@ -127,7 +127,23 @@ md-card {
 
 .appletStationLineText {
     font-size: 40px;
+    text-align: center;
 }
+
+.appletLineBox {
+    background-color: #2C3E50;
+    margin: 0;
+}
+
+.appleStationImage {
+    width:300px;
+    height:300px;
+    border-radius: 50%;
+    border: solid 12px;
+    border-color: #222E3B;
+    text-align: center;
+}
+
 .appletStationLines {
     font-size: 36px;
     text-align: center;

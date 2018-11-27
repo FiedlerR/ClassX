@@ -19,14 +19,22 @@
             </md-card-content>
         </md-card>
         <md-card md-theme-watch flex="30">
-            <md-card-content layout="column" layout-margin>
+            <md-card-content layout-margin >
                 <p class="appletTitle">{{$ctrl.station}}</p>
-                <img src="" >
-                <p class="appletStationLineText">Linien</p>
-                <div class="nomargin" ng-repeat="line in $ctrl.lines">
-                    <p class="appletStationLines">{{line}}</p>
+                <div layout="column"  layout-align="center center">
+                    <img class="appleStationImage" src="{{$ctrl.image}}" >
                 </div>
-                <div style="height:100%;"></div>
+                <div class="appletLineBox" >
+                    <!-- <p class="appletStationLineText">Linien</p> !-->
+                    <div  layout="row" layout-align="center center" style="flex-wrap: wrap;">
+                        <div class="nomargin"  ng-repeat="line in $ctrl.lines" style=" width: 50%;">
+                            <div layout="row"  layout-align="center center">
+                                <img src="{{line.symbolType}}" width="26" height="32">
+                                <p class="appletStationLines">{{line.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </md-card-content>
         </md-card>
     </div>
