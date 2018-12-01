@@ -10,7 +10,7 @@
                         <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
                         <div flex="10" layout="row"  layout-align="center center">
                             <p class="appletText" >{{train.line}}</p>
-                            <img src="{{train.symbolType}}" width="26" height="32">
+                            <img ng-src="{{train.symbolType}}" width="26" height="32">
                         </div>
                         <p class="trainDestination appletText" flex>{{train.destination}}</p>
                     </div>
@@ -22,14 +22,14 @@
             <md-card-content layout-margin >
                 <p class="appletTitle">{{$ctrl.station}}</p>
                 <div layout="column"  layout-align="center center">
-                    <img class="appleStationImage" src="{{$ctrl.image}}" >
+                    <img class="appleStationImage" ng-src="{{$ctrl.image}}" >
                 </div>
                 <div class="appletLineBox" >
                     <!-- <p class="appletStationLineText">Linien</p> !-->
                     <div  layout="row" layout-align="center center" style="flex-wrap: wrap;">
                         <div class="nomargin"  ng-repeat="line in $ctrl.lines" style=" width: 50%;">
                             <div layout="row"  layout-align="center center">
-                                <img src="{{line.symbolType}}" width="26" height="32">
+                                <img ng-src="{{line.symbolType}}" width="26" height="32">
                                 <p class="appletStationLines">{{line.name}}</p>
                             </div>
                         </div>

@@ -2,6 +2,8 @@
     <md-card-content layout="row" class="noborder" layout-align="space-between center">
         <p class="appletText">{{$ctrl.time}}</p>
         <p class="appletSideInformation appletWarning" ng-if="$ctrl.displayError">Einige Informationen sind möglichwerweise nicht aktuell!</p>
-        <p class="appletText">._.</p>
+        <p class="appletSideInformation appletWarning" ng-if="!$ctrl.displayError"></p>
+        <img style="width: 45px; height: 45px;" src="images/wifi{{$ctrl.level}}.svg" ng-class=" $ctrl.level === 0 ? 'animated flash infinite' : ''" alt="">
+        <p class="appletText">Class <span style="color: #e24c4b; margin: 0; padding:0;">X</span></p>
     </md-card-content>
 </md-card>

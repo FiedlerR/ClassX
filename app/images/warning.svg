@@ -1,0 +1,23 @@
+<svg id="warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.258 26.621">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e24c4b;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #3f4448;
+      }
+    </style>
+  </defs>
+  <path id="Path_198" data-name="Path 198" class="cls-1" d="M28.907,42.835,17.025,21.741a2.767,2.767,0,0,0-4.79,0L.352,42.835A2.784,2.784,0,0,0,2.747,46.98H26.42A2.812,2.812,0,0,0,28.907,42.835Z" transform="translate(0 -20.359)"/>
+  <path id="Path_199" data-name="Path 199" class="cls-2" d="M54.3,63.025,66.178,84.119H42.413L54.3,63.025Z" transform="translate(-39.666 -60.262)"/>
+  <g id="Group_26" data-name="Group 26" transform="translate(12.688 10.225)">
+    <path id="Path_200" data-name="Path 200" class="cls-3" d="M195.912,180.437l.737,4.882a1.2,1.2,0,0,0,1.2,1.013h0a1.275,1.275,0,0,0,1.2-1.013l.737-4.882a1.916,1.916,0,0,0-1.934-2.211h0A1.965,1.965,0,0,0,195.912,180.437Z" transform="translate(-195.905 -178.226)"/>
+    <ellipse id="Ellipse_6" data-name="Ellipse 6" class="cls-3" cx="1.105" cy="1.105" rx="1.105" ry="1.105" transform="translate(0.836 9.119)"/>
+  </g>
+</svg>

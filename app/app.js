@@ -1,4 +1,10 @@
 "use strict";
+const electron = require('electron');
+if(electron.remote.process.argv.includes("--live")) {
+    const mainWindow = electron.remote.getCurrentWindow();
+    mainWindow.setFullScreen(true);
+    mainWindow.setMenu(null);
+}
 
 // Einziges Modul dieser App und seine Abhängigkeiten
 var app = angular.module("Vorlage", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",
@@ -16,10 +22,16 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider,
 
 //
 var index = 0;
+let interval;
 app.config(function($routeProvider) {
-    document.addEventListener("keydown", (event) => {
-        window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}
+    const handler = throttled(4000, (event) => {
+        rotatePage();
+        clearInterval(interval);
+        interval = setInterval(rotatePage, 5000);
     });
+    document.addEventListener("keydown", handler);
+
+
     $routeProvider
         .when("/id0", {
             templateUrl : "index0.html"
@@ -29,9 +41,22 @@ app.config(function($routeProvider) {
         templateUrl : "index2.html"
     });
 });
-setInterval(function(){ window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}}, 5000);
-
-//
+interval = setInterval(rotatePage, 5000);
+function rotatePage() {
+    window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}
+}
+// Debounced Function
+function throttled(delay, fn) {
+    let lastCall = 0;
+    return function (...args) {
+        const now = (new Date).getTime();
+        if (now - lastCall < delay) {
+            return;
+        }
+        lastCall = now;
+        return fn(...args);
+    }
+}
 
 app.controller('cryptoController', function($scope, $http) {
     $http.get("https://api.cryptonator.com/api/full/btc-eur")

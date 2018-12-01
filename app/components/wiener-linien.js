@@ -37,6 +37,12 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
             this.trains = [];
             response.data.data.monitors.forEach(x => {
                 x.lines.forEach(y => {
+                    if(y.type === 'ptMetro') {
+                        y.towards = y.towards
+                            .split(" ")
+                            .map(wordPart => wordPart.charAt(0) + wordPart.toLowerCase().substr(1))
+                            .join(" ");
+                    }
                     y.departures.departure.forEach(z => {
                         var datePlanned = new Date(z.departureTime.timePlanned);
                         if(z.departureTime.timeReal != null) {
@@ -70,9 +76,7 @@ app.controller("WienerLinienController", function ($scope, $interval, $http) {
                 });
             });
 
-            this.trains.sort((x,y) => {
-                return x.time - y.time;
-            });
+            this.trains.sort((x,y) =>  x.time - y.time);
             this.reqEvent({
                 success: true,
                 component: this
