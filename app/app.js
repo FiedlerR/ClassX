@@ -1,4 +1,9 @@
 "use strict";
+const python = require('python-shell').PythonShell
+python.run('api/webuntis.py', null, (err, results) => {
+    console.log(results);
+})
+
 const electron = require('electron');
 if(electron.remote.process.argv.includes("--live")) {
     const mainWindow = electron.remote.getCurrentWindow();

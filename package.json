@@ -22,6 +22,7 @@
     "protractor": "^5.2.0"
   },
   "dependencies": {
-    "node-wifi": "^2.0.4"
+    "node-wifi": "^2.0.4",
+    "python-shell": "^1.0.6"
   }
 }

@@ -19,13 +19,13 @@ app.controller("InfobarController", function ($scope, $interval) {
             } else {
                 let signal = currentConnections[0].signal_level;
                 console.log(signal)
-                if(signal >= -50) {
+                if(signal >= -60) {
                     this.level = 4;
-                } else if (signal < -50 && signal >= -60) {
-                    this.level = 3;
                 } else if (signal < -60 && signal >= -70) {
+                    this.level = 3;
+                } else if (signal < -70 && signal >= -80) {
                     this.level = 2;
-                } else if (signal < -70) {
+                } else if (signal < -90) {
                     this.level = 1;
                 }
             }
