@@ -55,11 +55,15 @@ app.config(function($routeProvider) {
         templateUrl : "index1.html"
     }).when("/id2", {
         templateUrl : "index2.html"
+    }).when("/id3", {
+        templateUrl : "index3.html"
+    }).when("/id4", {
+        templateUrl : "index4.html"
     });
 });
 interval = setInterval(rotatePage, 5000);
 function rotatePage() {
-    window.location.href="#!id"+index; if(index < 2){index++}else{index = 0;}
+    window.location.href="#!id"+index; if(index < 4){index++}else{index = 0;}
 }
 // Debounced Function
 function throttled(delay, fn) {
