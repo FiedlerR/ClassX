@@ -6,9 +6,12 @@
   
     <title>Vorlage</title>
     <link rel="icon" href="favicon.ico">
-  
+    <link rel="stylesheet" href="animation.css">
+
     <link rel="stylesheet" href="vendor/material-icons-3.0.1/material-icons.css">
     <link rel="stylesheet" href="vendor/roboto/roboto.css">
+
+    <link href="fonts/OpenSans/OpenSans-Regular.ttf">
   
     <link rel="stylesheet" href="vendor/angular-material-1.1.10/angular-material.min.css">
   
@@ -28,14 +31,22 @@
 
     <script src="vendor/angular-material-1.1.10/angular-material.min.js"></script>
     <script src="vendor/angular-ui-router-1.0.18/angular-ui-router.min.js"></script>
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
     <script src="app.js"></script>
+
+    <script src="components/wiener-linien.js"></script>
+    <script src="components/infobar.js"></script>
+    <script src="components/crypto.js"></script>
+    <script src="components/time-table.js"></script>
   </head>
 
-  <body layout="column" ng-cloak>
-    <md-content class="md-padding">
-      <h1>Vorlage  <i class="material-icons">content_paste</i> für ein AngularJS Material-Projekt</h1>
-    </md-content>
-    <md-button ng-click="" class="md-raised md-primary">Anmelden</md-button>
+  <body layout="column">
+  <!--  <md-content>
+      <time-table></time-table>
+    </md-content> !-->
+    <div class="page" ng-view></div>
+    <infobar display-error=""></infobar>
   </body>
 </html>

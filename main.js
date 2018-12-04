@@ -8,6 +8,7 @@ function createWindow () {
         width: 600,
         height: 600,
         backgroundColor: '#ffffff',
+        "web-preferences": { "web-security": false }
         //icon: `file://${__dirname}/dist/assets/logo.png`
     })
 
@@ -15,7 +16,7 @@ function createWindow () {
     win.loadFile(`app/index.html`)
 
     //// uncomment below to open the DevTools.
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     // Event when the window is closed.
     win.on('closed', function () {

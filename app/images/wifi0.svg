@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 331.722">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #e24c4b;
+      }
+
+      .cls-2 {
+        font-size: 187px;
+        font-family: OpenSans-SemiBold, Open Sans;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <g id="Gruppe_72" data-name="Gruppe 72" transform="translate(-766 -422.278)">
+    <g id="wifi" transform="translate(766 362.553)">
+      <g id="Gruppe_71" data-name="Gruppe 71" transform="translate(0 59.725)">
+        <path id="Pfad_250" data-name="Pfad 250" class="cls-1" d="M77.662,212.813a19.759,19.759,0,0,0,27.944,27.944c53.176-53.176,139.719-53.176,192.9,0a19.733,19.733,0,0,0,27.869-27.944C257.828,144.2,146.2,144.2,77.662,212.813Z" transform="translate(-17.745 -84.806)"/>
+        <path id="Pfad_251" data-name="Pfad 251" class="cls-1" d="M148.462,290.853A19.759,19.759,0,0,0,176.406,318.8a60.916,60.916,0,0,1,86.166,0,19.706,19.706,0,0,0,27.869-27.869A100.4,100.4,0,0,0,148.462,290.853Z" transform="translate(-35.218 -109.519)"/>
+        <circle id="Ellipse_7" data-name="Ellipse 7" class="cls-1" cx="26.287" cy="26.287" r="26.287" transform="translate(157.984 225.999)"/>
+        <path id="Pfad_252" data-name="Pfad 252" class="cls-1" d="M362.78,133.5c-98.444-98.368-258.575-98.368-357.018,0a19.759,19.759,0,0,0,27.944,27.944c83-83.078,218.128-83.078,301.206,0A19.733,19.733,0,0,0,362.78,133.5Z" transform="translate(0 -59.725)"/>
+      </g>
+    </g>
+    <text id="_" data-name="!" class="cls-2" transform="translate(1096 699)"><tspan x="0" y="0">!</tspan></text>
+  </g>
+</svg>
