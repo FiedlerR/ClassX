@@ -6,6 +6,7 @@
                 <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 10" layout="column">
                     <div layout="row">
                         <p class="appletText" flex="25">{{train.timeString}} <span class="appletSideInformation">({{train.delay}})</span></p>
+                        <img class="appletWarningIcon" src="images/warning.svg" ng-if="train.trafficJam">
                         <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam">Stau</p>
                         <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
                         <div flex="10" layout="row"  layout-align="center center">

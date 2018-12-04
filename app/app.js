@@ -25,6 +25,17 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider,
     $httpProvider.defaults.useXDomain = true;
 });
 
+
+readKeys();
+function readKeys() {
+    var fs = require('fs');
+    var contents = fs.readFileSync('config/.keys', 'utf8');
+    console.log(contents);
+    return contents;
+}
+
+
+
 //
 var index = 0;
 let interval;
@@ -81,6 +92,7 @@ app.controller('cryptoController', function($scope, $http) {
             $scope.bitcoinCash = response.data;
         });
 });
+
 
 
 

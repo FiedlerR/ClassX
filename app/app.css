@@ -76,9 +76,11 @@ body {
 
 
 .pageBody {
+    height: 100%;
     background-color: #161e27;
     padding: 50px;
     padding-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 md-content {
@@ -152,6 +154,11 @@ md-card {
     text-align: center;
 }
 
+.appletWarningIcon{
+    width:94px;
+    height: 43px;
+}
+
 .appletStationLines {
     font-size: 36px;
     text-align: center;
@@ -174,3 +181,5 @@ md-card {
     bottom: 0;
     width: 100%;
 }
+
+
