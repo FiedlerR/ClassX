@@ -3,8 +3,7 @@ from datetime import datetime, timedelta
 from webuntis.objects import PeriodObject
 import json
 
-
-confFile = open("../config/.keys", "r")
+confFile = open("./app/config/.keys", "r")
 confArray = confFile.readlines()[1].split(":")
 
 s = webuntis.Session(
@@ -32,21 +31,29 @@ def isInRange(element: PeriodObject) -> bool:
         return False
     return False
 
-
 filteredLesson = filter(isInRange, currentLessons)
 data = []
 for fach in filteredLesson:
     minsLeft = (fach.end - datetime.now()).total_seconds() / 60
     difference = (fach.end - fach.start).total_seconds() / 60
     data.append({
-        "subjects": fach.subjects.__str__(),
+        "subjects": [{
+            "long": subject.long_name,
+            "short": subject.name
+        } for subject in fach.subjects],
         "start": fach.start.__str__(),
         "end": fach.end.__str__(),
         "differenceHour": difference,
         "countdown": minsLeft,
         "progressPercent": 100-((minsLeft*100) / difference),
-        "rooms": fach.rooms.__str__(),
-        "teachers:": fach.teachers.__str__()
+        "rooms": [room.name for room in fach.rooms],
+        "teachers:": [{
+            "fullName": teacher.full_name,
+            "shortName": teacher.name,
+            "surname": teacher.surname,
+            "forename": teacher.fore_name,
+            "title": teacher.title
+        } for teacher in fach.teachers]
     })
 
 json_data = json.dumps(data)

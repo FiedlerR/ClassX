@@ -18,7 +18,6 @@ app.controller("InfobarController", function ($scope, $interval) {
                 this.level = 0;
             } else {
                 let signal = currentConnections[0].signal_level;
-                console.log(signal)
                 if(signal >= -60) {
                     this.level = 4;
                 } else if (signal < -60 && signal >= -70) {

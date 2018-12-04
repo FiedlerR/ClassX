@@ -8,5 +8,18 @@ angular.module("Vorlage").component("timeTable", {
 });
 
 app.controller("TimeTableController", function ($scope, $interval) {
+    this.refreshTimeTable = () => {
+        this.python.run("./app/api/api.py", {
+            pythonPath: "/usr/bin/python3"
+        }, (err, response) => {
+            this.lessonArray = JSON.parse(response[0]);
+            console.log(this.lessonArray)
+        });
+    }
 
+    this.$onInit = () => {
+        this.python = require('python-shell').PythonShell;
+        this.refreshTimeTable();
+    }
+    $interval(this.refreshTimeTable, 5000);
 });

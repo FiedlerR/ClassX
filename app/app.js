@@ -1,9 +1,4 @@
 "use strict";
-const python = require('python-shell').PythonShell
-python.run('api/webuntis.py', null, (err, results) => {
-    console.log(results);
-})
-
 const electron = require('electron');
 if(electron.remote.process.argv.includes("--live")) {
     const mainWindow = electron.remote.getCurrentWindow();
@@ -29,7 +24,7 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider,
 readKeys();
 function readKeys() {
     var fs = require('fs');
-    var contents = fs.readFileSync('config/.keys', 'utf8');
+    var contents = fs.readFileSync("./app/config/.keys", 'utf8');
     console.log(contents);
     return contents;
 }
