@@ -11,12 +11,14 @@ angular.module("Vorlage").component("infobar", {
 app.controller("InfobarController", function ($scope, $interval) {
     this.refreshTime = () => {
         this.time = moment().format("HH:mm:ss");
-
+    };
+    this.refreshWifi = () => {
         this.wifi.getCurrentConnections((err, currentConnections) => {
-            if(err) {
+            if(currentConnections == false) {
                 this.level = 0;
             } else {
                 let signal = currentConnections[0].signal_level;
+                console.log(signal)
                 if(signal >= -50) {
                     this.level = 4;
                 } else if (signal < -50 && signal >= -60) {
@@ -28,7 +30,7 @@ app.controller("InfobarController", function ($scope, $interval) {
                 }
             }
         });
-    };
+    }
 
     this.$onInit = () => {
         this.wifi = require('node-wifi');
@@ -37,6 +39,8 @@ app.controller("InfobarController", function ($scope, $interval) {
         });
         this.level = 0;
         this.refreshTime();
+        this.refreshWifi();
     }
     $interval(this.refreshTime, 1000);
+    $interval(this.refreshWifi, 10000);
 });
