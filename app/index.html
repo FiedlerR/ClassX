@@ -33,20 +33,20 @@
     <script src="vendor/angular-ui-router-1.0.18/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-
     <script src="app.js"></script>
 
     <script src="components/wiener-linien.js"></script>
     <script src="components/infobar.js"></script>
     <script src="components/crypto.js"></script>
     <script src="components/time-table.js"></script>
+    <script src="components/digitoring.js"></script>
   </head>
 
   <body layout="column">
-  <!--  <md-content>
-      <time-table></time-table>
-    </md-content> !-->
-    <div class="page" ng-view></div>
+    <md-content>
+      <digitoring></digitoring>
+    </md-content>
+    <!--<div class="page" ng-view></div>-->
     <infobar display-error=""></infobar>
   </body>
 </html>
