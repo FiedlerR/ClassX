@@ -35,7 +35,7 @@ function readKeys() {
 var index = 0;
 let interval;
 app.config(function($routeProvider) {
-    const handler = throttled(4000, (event) => {
+    const handler = throttled(1000, (event) => {
         rotatePage();
         clearInterval(interval);
         interval = setInterval(rotatePage, 5000);
@@ -56,10 +56,12 @@ app.config(function($routeProvider) {
         templateUrl : "index4.html"
     });
 });
+
 interval = setInterval(rotatePage, 5000);
 function rotatePage() {
     window.location.href="#!id"+index; if(index < 4){index++}else{index = 0;}
 }
+
 // Debounced Function
 function throttled(delay, fn) {
     let lastCall = 0;
@@ -72,42 +74,6 @@ function throttled(delay, fn) {
         return fn(...args);
     }
 }
-
-app.controller('cryptoController', function($scope, $http) {
-    $http.get("https://api.cryptonator.com/api/full/btc-eur")
-        .then(function(response) {
-            $scope.bitcoin = response.data;
-        });
-    $http.get("https://api.cryptonator.com/api/full/ETH-eur")
-        .then(function(response) {
-            $scope.ethereum = response.data;
-        });
-    $http.get("https://api.cryptonator.com/api/full/xrp-eur")
-        .then(function(response) {
-            $scope.ripple = response.data;
-        });
-    $http.get("https://api.cryptonator.com/api/full/BCH-eur")
-        .then(function(response) {
-            $scope.bitcoinCash = response.data;
-        });
-});
-
-
-
-
-//
-app.controller('wienerLinienController', function($scope, $http) {
-    $http.get("https://www.wienerlinien.at/ogd_realtime/monitor?rbl=4915&rbl=4902&activateTrafficInfo=stoerungkurz&" +
-        "activateTrafficInfo=stoerunglang&activateTrafficInfo=aufzugsinfo&sender=rdWGw7kFZ6gPCNsF")
-        .then(function(response) {
-            $scope.metro = response.data;
-        });
-    $http.get("http://www.wienerlinien.at/ogd_realtime/monitor?rbl=2044&rbl=2015&rbl=293&rbl=284&activateTrafficInfo=stoerungkurz&" +
-        "activateTrafficInfo=stoerunglang&activateTrafficInfo=aufzugsinfo&sender=rdWGw7kFZ6gPCNsF")
-        .then(function(response) {
-            $scope.tram = response.data;
-        });
-});
 
 // Thema einstellen, mögliche Paletten sind:
 // red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green,
