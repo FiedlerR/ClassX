@@ -11,20 +11,19 @@ angular.module("Vorlage").component("wienerLinien", {
 });
 
 
-app.controller("WienerLinienController", function ($scope, $interval, $http, ApiService) {
+app.controller("WienerLinienController", function ($scope, $interval, $http, ApiService, KeyService) {
     this.lines = [];
     this.alreadySet = [];
     this.$onInit = () => {
-        if(this.rbls == null) {
-            this.rblss = "";
-        } else {
-            this.rblss = "rbl=" + this.rbls.split(',').join('&rbl=');
+        let rblss = "";
+        if(this.rbls != null) {
+            rblss = "rbl=" + this.rbls.split(',').join('&rbl=');
         }
 
-        //this.updateData();
+        let accessKey = KeyService.get("WienerLinienAccessKey");
         ApiService.add("WienerLinienController_" + this.rbls, {
             method: 'GET',
-            url: 'http://www.wienerlinien.at/ogd_realtime/monitor?' + this.rblss + '&activateTrafficInfo=stoerungkurz&activateTrafficInfo=stoerunglang&activateTrafficInfo=aufzugsinfo&sender=rdWGw7kFZ6gPCNsF',
+            url: 'https://www.wienerlinien.at/ogd_realtime/monitor?' + rblss + '&activateTrafficInfo=stoerungkurz&activateTrafficInfo=stoerunglang&sender=' + accessKey,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

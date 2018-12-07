@@ -13,7 +13,6 @@ app.controller("TimeTableController", function ($scope, $interval) {
             pythonPath: "/usr/bin/python3"
         }, (err, response) => {
             this.lessonArray = JSON.parse(response[0]);
-            console.log(this.lessonArray)
         });
     }
 

@@ -87,7 +87,9 @@ angular.module('Vorlage').service('ApiService', function($interval, $http) {
     };
 
     var _errorEncountered = () => {
-        return !_requests.every(x => x.lastRunPass);
+        return Object.values(_requests).some((x) => {
+            return !(x.lastRunPass);
+        });
     };
 
     var _subscribe = (name, callback) => {
@@ -117,5 +119,29 @@ angular.module('Vorlage').service('ApiService', function($interval, $http) {
         errorEncountered: _errorEncountered,
         subscribe: _subscribe,
         unsubscribe: _unsubscribe
+    });
+});
+
+angular.module('Vorlage').service('KeyService', function() {
+    var keys;
+    var _readKeys = () => {
+        let fs = require('fs');
+        keys = JSON.parse(fs.readFileSync("./app/config/.keys", 'utf8'));
+    };
+
+    var _get = (key) => {
+        if(!keys) {
+            _readKeys();
+        }
+
+        if(key) {
+            return keys[key];
+        } else {
+            return keys;
+        }
+    };
+
+    return ({
+        get: _get
     });
 });

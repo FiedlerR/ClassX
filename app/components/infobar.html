@@ -1,10 +1,10 @@
 <md-card class="infobox" md-theme-watch>
     <md-card-content layout="row" class="noborder" layout-align="space-between center">
         <p class="appletText">{{$ctrl.time}}</p>
-        <p class="appletSideInformation appletWarning" ng-if="$ctrl.displayError">Einige Informationen sind möglichwerweise nicht aktuell!</p>
-        <p class="appletSideInformation appletWarning" ng-if="!$ctrl.displayError"></p>
+        <p class="appletSideInformation appletWarning" ng-if="$ctrl.errorEncountered">Einige Informationen sind möglichwerweise nicht aktuell!</p>
+        <p class="appletSideInformation appletWarning" ng-if="!$ctrl.errorEncountered"></p>
         <div layout="row">
-            <img style="width: 45px; height: 45px; padding-right: 10px" src="images/wifi{{$ctrl.level}}.svg" ng-class=" $ctrl.level === 0 ? 'animated flash infinite' : ''" alt="">
+            <img style="width: 45px; height: 45px; padding-right: 10px" src="images/wifi{{$ctrl.level}}.svg" ng-class="$ctrl.level === 0 ? 'animated flash infinite' : ''" alt="">
             <p class="appletText">Class <span style="color: #e24c4b; margin: 0; padding:0;">X</span></p>
         </div>
     </md-card-content>

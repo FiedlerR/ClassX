@@ -4,14 +4,18 @@ angular.module("Vorlage").component("infobar", {
     templateUrl: "components/infobar.html",
     controller: "InfobarController",
     bindings: {
-        displayError: "<"
     }
 });
 
-app.controller("InfobarController", function ($scope, $interval) {
+app.controller("InfobarController", function ($scope, $interval, ApiService) {
+    this.errorEncountered = false;
+
     this.refreshTime = () => {
         this.time = moment().format("HH:mm:ss");
+
+        this.errorEncountered = ApiService.errorEncountered();
     };
+
     this.refreshWifi = () => {
         this.wifi.getCurrentConnections((err, currentConnections) => {
             if(currentConnections == false) {
@@ -29,7 +33,7 @@ app.controller("InfobarController", function ($scope, $interval) {
                 }
             }
         });
-    }
+    };
 
     this.$onInit = () => {
         this.wifi = require('node-wifi');
@@ -39,7 +43,8 @@ app.controller("InfobarController", function ($scope, $interval) {
         this.level = 0;
         this.refreshTime();
         this.refreshWifi();
-    }
+    };
+
     $interval(this.refreshTime, 1000);
     $interval(this.refreshWifi, 10000);
 });

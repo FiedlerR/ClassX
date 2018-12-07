@@ -20,25 +20,13 @@ app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider,
     $httpProvider.defaults.useXDomain = true;
 });
 
-
-readKeys();
-function readKeys() {
-    var fs = require('fs');
-    var contents = fs.readFileSync("./app/config/.keys", 'utf8');
-    console.log(contents);
-    return contents;
-}
-
-
-
-//
 var index = 0;
 let interval;
 app.config(function($routeProvider) {
-    const handler = throttled(1000, (event) => {
+    const handler = throttled(500, (event) => {
         rotatePage();
         clearInterval(interval);
-        interval = setInterval(rotatePage, 5000);
+        interval = setInterval(rotatePage, 10000);
     });
     document.addEventListener("keydown", handler);
 
@@ -57,7 +45,7 @@ app.config(function($routeProvider) {
     });
 });
 
-interval = setInterval(rotatePage, 5000);
+interval = setInterval(rotatePage, 10000);
 function rotatePage() {
     window.location.href="#!id"+index; if(index < 4){index++}else{index = 0;}
 }
