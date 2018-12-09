@@ -19,17 +19,17 @@
                         <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
                             <div style="height: 30px; width: {{$ctrl.currentLesson.progressPercent }}%; background-color: greenyellow; padding: 0; margin: 0;"></div>
                         </div>
-                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
+                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.differenceHour | number:0}} min</p>
                     </div>
                 </div>
-                <div layout="row" class="nomargin">
-                    <div layout="column" class="appletBox" flex>
+                <div layout="row" class="appletBox"  class="nomargin">
+                    <div layout="column" flex>
                         <div layout="row"layout-margin  style="margin-left: 25%;" ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
                             <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                             <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                         </div>
                     </div>
-                    <div layout="column" class="appletBox" flex >
+                    <div layout="column" flex >
                         <div layout="row"  layout-margin  style="margin-left: 25%;">
                             <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                             <p class="appletSemiSide centered">PLF</p>
@@ -56,11 +56,11 @@
                 <div layout="column" class="appletBox">
                     <div layout="row" flex layout-margin layout-align="center center" ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
                         <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                        <p class="appletSemiSide centered">Mag. Anna Flex</p>
+                        <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                     </div>
                     <div layout="row" flex layout-margin layout-align="center center">
                         <img ng-src="images/school/room.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                        <p class="appletSemiSide centered">Mag. Anna Flex</p>
+                        <p class="appletSemiSide centered">{{$ctrl.nextLesson.rooms[0]}}</p>
                         </img>
                     </div>
                 </div>

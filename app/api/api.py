@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from webuntis.objects import PeriodObject
 import json
 
-with open("./app/config/.keys") as data:
+with open("app/config/.keys") as data:
     jsonConf = json.load(data)
 
 s = webuntis.Session(
@@ -22,7 +22,7 @@ bufferDays = now + timedelta(days=3)
 currentLessons = sorted(s.timetable(klasse=503, start=now, end=bufferDays), key=lambda x: x.start)
 
 foundCounter = 0
-def isInRange(element: PeriodObject) -> bool:
+def isInRange(element):
     global foundCounter
     if foundCounter < 2:
         if element.end > datetime.now():
