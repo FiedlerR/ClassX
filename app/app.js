@@ -42,12 +42,14 @@ app.config(function($routeProvider) {
         templateUrl : "index3.html"
     }).when("/id4", {
         templateUrl : "index4.html"
+    }).when("/id5", {
+        templateUrl : "index5.html"
     });
 });
 
 interval = setInterval(rotatePage, 10000);
 function rotatePage() {
-    window.location.href="#!id"+index; if(index < 4){index++}else{index = 0;}
+    window.location.href="#!id"+index; if(index < 5){index++}else{index = 0;}
 }
 
 // Debounced Function
