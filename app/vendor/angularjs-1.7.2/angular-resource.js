@@ -119,7 +119,7 @@ function shallowClearAndCopy(src, dst) {
  *   function will be passed the current data value as an argument.
  *
  *   Each key value in the parameter object is first bound to url template if present and then any
- *   excess keys are appended to the url search query after the `?`.
+ *   excess .keys are appended to the url search query after the `?`.
  *
  *   Given a template `/path/:verb` and parameter `{verb: 'greet', salutation: 'Hello'}` results in
  *   URL `/path/greet?salutation=Hello`.

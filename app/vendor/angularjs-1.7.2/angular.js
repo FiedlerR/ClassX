@@ -24656,7 +24656,7 @@ var inputType = {
         var valid = element(by.binding('myForm.input.$valid'));
 
         // currently protractor/webdriver does not support
-        // sending keys to all known HTML5 input controls
+        .keys
         // for various browsers (see https://github.com/angular/protractor/issues/562).
         function setInput(val) {
           // set the value of the element and force validation.
@@ -24969,7 +24969,7 @@ var inputType = {
       var valid = element(by.binding('myForm.input.$valid'));
 
       // currently protractor/webdriver does not support
-      // sending keys to all known HTML5 input controls
+      .keys
       // for various browsers (https://github.com/angular/protractor/issues/562).
       function setInput(val) {
         // set the value of the element and force validation.
