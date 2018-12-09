@@ -1,18 +1,18 @@
 <div class="pageBody" >
     <p class="pageTitle">Stundenplan</p>
     <div layout="row">
-        <md-card flex>
+        <md-card flex="70">
             <md-card-content layout="column" layout-margin layout-padding>
                 <p class="appletTitle">Derzeitige Stunde</p>
                 <div layout="row" class="appletBox">
                     <div style="margin: auto;" layout="row">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto; margin-right: 24px;"></div>
+                        <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 24px;">
                         <p class="appletSemiSide centered">Softwareentwicklung</p>
                     </div>
                 </div>
                 <div layout="row" class="appletBox">
                     <div layout="row" flex layout-margin layout-align="center center">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
+                        <img ng-src="images/school/time.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                         <p class="appletSemiSide centered">11:05 - 12:30</p>
                     </div>
                     <div layout="row" flex layout-margin layout-align="center center">
@@ -25,47 +25,52 @@
                 <div layout="row" class="nomargin">
                     <div layout="column" class="appletBox" flex>
                         <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
+                            <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;"></img>
                             <p class="appletSemiSide centered">Mag. Anna Flex</p>
                         </div>
                         <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
+                            <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                             <p class="appletSemiSide centered">Mag. Anna Flex</p>
                         </div>
                     </div>
                     <div layout="column" class="appletBox" flex>
                         <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
+                            <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                             <p class="appletSemiSide centered">Mag. Anna Flex</p>
                         </div>
                         <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
+                            <img ng-src="images/school/room.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
                             <p class="appletSemiSide centered">Mag. Herta Suwantschieff</p>
                         </div>
                     </div>
                 </div>
             </md-card-content>
         </md-card>
-        <md-card flex>
-            <md-card-content layout="column">
-                <p>Nächste Stunde</p>
-                <div layout="row">
-                    <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                    <p>Softwareentwicklung</p>
+        <md-card flex="30">
+            <md-card-content layout="column" layout-margin layout-padding>
+                <p class="appletTitle" >Nächste Stunde</p>
+                
+                <div layout="row" class="appletBox">
+                    <div style="margin: auto;" layout="row">
+                        <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 24px;">
+                        <p class="appletSemiSide centered">Softwareentwicklung</p>
+                    </div>
                 </div>
-                <div layout="column">
-                    <div layout="row">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p>Mag. Anna Flex</p>
+
+                <div layout="column" class="appletBox">
+                    <div layout="row" flex layout-margin layout-align="center center">
+                        <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
+                        <p class="appletSemiSide centered">Mag. Anna Flex</p>
                     </div>
-                    <div layout="row">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p>Mag. Anna Flex</p>
+                    <div layout="row" flex layout-margin layout-align="center center">
+                        <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
+                        <p class="appletSemiSide centered">Mag. Anna Flex</p>
                     </div>
-                    <div layout="row">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p>Mag. Anna Flex</p>
-                    </div>
+                    <div layout="row" flex layout-margin layout-align="center center">
+                        <img ng-src="images/school/room.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
+                        <p class="appletSemiSide centered">Mag. Anna Flex</p>
+                    </img>
+                </div>
                 </div>
             </md-card-content>
         </md-card>
