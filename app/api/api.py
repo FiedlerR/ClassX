@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 from webuntis.objects import PeriodObject
 import json
 
-confFile = open("./app/config/.keys", "r")
-confArray = confFile.readlines()[1].split(":")
+with open("./app/config/.keys") as data:
+    jsonConf = json.load(data)
 
 s = webuntis.Session(
-    username=confArray[0],
-    password=confArray[1],
+    username=jsonConf['UntisUser'],
+    password=jsonConf['UntisPass'],
     server='urania.webuntis.com',
     school='htl3r',
     useragent='WebUntis Test'
@@ -18,8 +18,8 @@ now = datetime.now()
 bufferDays = now + timedelta(days=3)
 
 
-currentLessons = s.timetable(klasse=503, start=now, end=bufferDays).combine()
 
+currentLessons = sorted(s.timetable(klasse=503, start=now, end=bufferDays), key=lambda x: x.start)
 
 foundCounter = 0
 def isInRange(element: PeriodObject) -> bool:
@@ -32,6 +32,7 @@ def isInRange(element: PeriodObject) -> bool:
     return False
 
 filteredLesson = filter(isInRange, currentLessons)
+
 data = []
 for fach in filteredLesson:
     minsLeft = (fach.end - datetime.now()).total_seconds() / 60
@@ -47,7 +48,7 @@ for fach in filteredLesson:
         "countdown": minsLeft,
         "progressPercent": 100-((minsLeft*100) / difference),
         "rooms": [room.name for room in fach.rooms],
-        "teachers:": [{
+        "teachers": [{
             "fullName": teacher.full_name,
             "shortName": teacher.name,
             "surname": teacher.surname,

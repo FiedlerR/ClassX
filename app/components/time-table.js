@@ -9,10 +9,13 @@ angular.module("Vorlage").component("timeTable", {
 
 app.controller("TimeTableController", function ($scope, $interval) {
     this.refreshTimeTable = () => {
-        this.python.run("./app/api/api.py", {
-            pythonPath: "/usr/bin/python3"
-        }, (err, response) => {
-            this.lessonArray = JSON.parse(response[0]);
+        this.python.run("./app/api/api.py", null, (err, response) => {
+            let res = JSON.parse(response[0]);
+            this.currentLesson = res[0];
+            this.nextLesson = res[1];
+            this.currentLesson.end = new Date(this.currentLesson.end);
+            this.currentLesson.start = new Date(this.currentLesson.start);
+            console.log(res)
         });
     }
 

@@ -7,40 +7,36 @@
                 <div layout="row" class="appletBox">
                     <div style="margin: auto;" layout="row">
                         <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto; margin-right: 24px;"></div>
-                        <p class="appletSemiSide centered">Softwareentwicklung</p>
+                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.subjects[0].long}}</p>
                     </div>
                 </div>
                 <div layout="row" class="appletBox">
                     <div layout="row" flex layout-margin layout-align="center center">
                         <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p class="appletSemiSide centered">11:05 - 12:30</p>
+                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.start | date:"H:mm"}} - {{$ctrl.currentLesson.end | date:"H:mm"}}</p>
                     </div>
                     <div layout="row" flex layout-margin layout-align="center center">
                         <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
-                            <div style="height: 30px; width: 60%; background-color: greenyellow; padding: 0; margin: 0;"></div>
+                            <div style="height: 30px; width: {{ $ctrl.currentLesson.progressPercent }}%; background-color: #CFF09E; padding: 0; margin: 0;"></div>
                         </div>
-                        <p class="appletSemiSide centered">7 min</p>
+                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
                     </div>
                 </div>
                 <div layout="row" class="nomargin">
                     <div layout="column" class="appletBox" flex>
-                        <div layout="row" layout-align="center center" layout-margin>
+                        <div layout="row" layout-align="center center" layout-margin ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
                             <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                            <p class="appletSemiSide centered">Mag. Anna Flex</p>
-                        </div>
-                        <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                            <p class="appletSemiSide centered">Mag. Anna Flex</p>
+                            <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                         </div>
                     </div>
                     <div layout="column" class="appletBox" flex>
                         <div layout="row" layout-align="center center" layout-margin>
-                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                            <p class="appletSemiSide centered">Mag. Anna Flex</p>
+                            <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;">PLF</div>
+                            <p class="appletSemiSide centered"></p>
                         </div>
                         <div layout="row" layout-align="center center" layout-margin>
                             <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                            <p class="appletSemiSide centered">Mag. Herta Suwantschieff</p>
+                            <p class="appletSemiSide centered">{{$ctrl.currentLesson.rooms[0]}}</p>
                         </div>
                     </div>
                 </div>
@@ -51,16 +47,12 @@
                 <p>Nächste Stunde</p>
                 <div layout="row">
                     <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                    <p>Softwareentwicklung</p>
+                    <p>{{$ctrl.nextLesson.subjects[0].long}}</p>
                 </div>
                 <div layout="column">
-                    <div layout="row">
+                    <div layout="row" ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
                         <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p>Mag. Anna Flex</p>
-                    </div>
-                    <div layout="row">
-                        <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
-                        <p>Mag. Anna Flex</p>
+                        <p>{{teacher.fullName}}</p>
                     </div>
                     <div layout="row">
                         <div style="height: 30px; width: 30px; background-color: gray; margin-top: auto; margin-bottom: auto;"></div>
