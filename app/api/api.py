@@ -6,7 +6,7 @@ import json
 confFile = open("./app/config/.keys", "r")
 confArray = confFile.readlines()[1].split(":")
 
-s = webuntis.Session(
+s = webuntis.Session(0
     username=confArray[0],
     password=confArray[1],
     server='urania.webuntis.com',
