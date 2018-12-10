@@ -76,5 +76,5 @@ app.controller("WienerLinienController", function ($scope, $interval, $http, Api
 
     $scope.$on('$destroy', () => {
         ApiService.unsubscribe("WienerLinienController_" + this.rbls);
-    })
+    });
 });
