@@ -4,39 +4,39 @@
         <md-card flex="70">
             <md-card-content layout="column" layout-margin layout-padding>
                 <p class="appletTitle">Derzeitige Stunde</p>
-                <div layout="row" class="appletBox">
-                    <div style="margin: auto;" layout="row">
-                        <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 24px;">
-                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.subjects[0].long}}</p>
+                <div layout="column" layout-align="space-around center" class="tableBoxHeight">
+                    <div layout="row" layout-align="center center" class="appletBox">
+                            <img ng-src="images/school/subject.svg" class="svgIcon" style="margin-right: 24px;">
+                            <p class="appletSemiSide centered">{{$ctrl.nextLesson.subjects[0].long}}</p>
                     </div>
-                </div>
-                <div layout="row" class="appletBox">
-                    <div layout="row" flex layout-margin layout-align="center center">
-                        <img ng-src="images/school/time.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.start | date:"H:mm"}} - {{$ctrl.currentLesson.end | date:"H:mm"}}</p>
-                    </div>
-                    <div layout="row" flex layout-margin layout-align="center center">
-                        <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
-                            <div style="height: 30px; width: {{ $ctrl.currentLesson.progressPercent }}%; background-color: #CFF09E; padding: 0; margin: 0;"></div>
+                    <div layout="row" layout-align="space-between center" class="appletBox">
+                        <div layout="row" flex layout-margin layout-align="center center">
+                            <img ng-src="images/school/time.svg" class="svgIcon">
+                            <p class="appletSemiSide centered">{{$ctrl.currentLesson.start | date:"H:mm"}} - {{$ctrl.currentLesson.end | date:"H:mm"}}</p>
                         </div>
-                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
-                    </div>
-                </div>
-                <div layout="row" class="appletBox"  class="nomargin">
-                    <div layout="column" flex>
-                        <div layout="row"layout-margin  style="margin-left: 25%;" ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
-                            <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                            <p class="appletSemiSide centered">{{teacher.fullName}}</p>
+                        <div layout="row" flex layout-margin layout-align="center center">
+                            <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
+                                <div class="loadingBar" style="width: {{ $ctrl.currentLesson.progressPercent }}"></div>
+                            </div>
+                            <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
                         </div>
                     </div>
-                    <div layout="column" flex >
-                        <div layout="row"  layout-margin  style="margin-left: 25%;">
-                            <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                            <p class="appletSemiSide centered">PLF</p>
+                    <div layout="row" class="bigAppletBox appletBox" layout-align="space-between center"  class="nomargin">
+                        <div layout="column" layout-align="center center" flex>
+                            <div layout="row" layout-margin layout-align ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
+                                <img ng-src="images/school/teacher.svg" class="svgIcon">
+                                <p class="appletSemiSide centered">{{teacher.fullName}}</p>
+                            </div>
                         </div>
-                        <div layout="row" layout-margin  style="margin-left: 25%;">
-                            <img ng-src="images/school/room.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                            <p class="appletSemiSide centered">{{$ctrl.currentLesson.rooms[0]}}</p>
+                        <div layout="column" layout-align="center center" flex >
+                            <div layout="row"  layout-margin  style="">
+                                <img ng-src="images/school/subject.svg" class="svgIcon">
+                                <p class="appletSemiSide centered">PLF</p>
+                            </div>
+                            <div layout="row" layout-margin  style="">
+                                <img ng-src="images/school/room.svg" class="svgIcon">
+                                <p class="appletSemiSide centered">{{$ctrl.currentLesson.rooms[0]}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,22 +46,21 @@
             <md-card-content layout="column" layout-margin layout-padding>
                 <p class="appletTitle" >Nächste Stunde</p>
 
-                <div layout="row" class="appletBox">
-                    <div style="margin: auto;" layout="row">
-                        <img ng-src="images/school/subject.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto; margin-right: 24px;">
+                <div layout="column" layout-align="space-around center" class="tableBoxHeight">
+                    <div layout="row" layout-align="center center" class="appletBox">
+                        <img ng-src="images/school/subject.svg" class="svgIcon" style="margin-right: 24px;">
                         <p class="appletSemiSide centered">{{$ctrl.nextLesson.subjects[0].long}}</p>
                     </div>
-                </div>
 
-                <div layout="column" class="appletBox">
-                    <div layout="row" flex layout-margin layout-align="center center" ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
-                        <img ng-src="images/school/teacher.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                        <p class="appletSemiSide centered">{{teacher.fullName}}</p>
-                    </div>
-                    <div layout="row" flex layout-margin layout-align="center center">
-                        <img ng-src="images/school/room.svg" style="height: 30px; width: 30px; margin-top: auto; margin-bottom: auto;">
-                        <p class="appletSemiSide centered">{{$ctrl.nextLesson.rooms[0]}}</p>
-                        </img>
+                    <div layout="column" layout-align="space-around center" class="nextHourInfoBox appletBox">
+                        <div layout="row" layout-margin layout-align="start center" ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
+                            <img ng-src="images/school/teacher.svg" class="svgIcon">
+                            <p class="appletSemiSide centered">{{teacher.fullName}}</p>
+                        </div>
+                        <div layout="row" layout-margin layout-align="start center">
+                            <img ng-src="images/school/room.svg" class="svgIcon">
+                            <p class="appletSemiSide centered">{{$ctrl.nextLesson.rooms[0]}}</p>
+                        </div>
                     </div>
                 </div>
             </md-card-content>
