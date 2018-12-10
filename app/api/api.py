@@ -26,7 +26,6 @@ currentLessons = s.timetable(klasse=503, start=now, end=bufferDays).combine(comb
 # print(map(currentLessons, lambda x: x.end))
 foundCounter = 0
 
-
 def isInRange(element):
     global foundCounter
     if foundCounter < 2:
@@ -35,7 +34,6 @@ def isInRange(element):
             return element.end > datetime.now()
         return False
     return False
-
 
 filteredLesson = filter(isInRange, currentLessons)
 

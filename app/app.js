@@ -23,6 +23,7 @@ app.config(["$logProvider", "$compileProvider", "$mdAriaProvider", "$qProvider",
 var index = 0;
 let interval;
 app.config(["$routeProvider", function($routeProvider) {
+    rotatePage();
     const handler = throttled(500, (event) => {
         rotatePage();
         clearInterval(interval);
@@ -30,10 +31,9 @@ app.config(["$routeProvider", function($routeProvider) {
     });
     document.addEventListener("keydown", handler);
 
-    $routeProvider
-        .when("/id0", {
-            templateUrl : "index0.html"
-        }).when("/id1", {
+    $routeProvider.when("/id0", {
+        templateUrl : "index0.html"
+    }).when("/id1", {
         templateUrl : "index1.html"
     }).when("/id2", {
         templateUrl : "index2.html"
