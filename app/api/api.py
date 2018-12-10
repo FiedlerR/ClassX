@@ -17,11 +17,18 @@ s = webuntis.Session(
 now = datetime.now()
 bufferDays = now + timedelta(days=3)
 
+# currentLessons = sorted(s.timetable(klasse=503, start=now, end=bufferDays), key=lambda x: x.start)
+currentLessons = s.timetable(klasse=503, start=now, end=bufferDays).combine(combine_breaks=True
 
+# for x in range(0, currentLessons.__len__()):
+# if currentLessons[x].subjects[0].name == currentLessons[x + 1].subjects[0].name:
+#    currentLessons[x].subjects.append
+# print(map(currentLessons, lambda x: x.end))
 
-currentLessons = sorted(s.timetable(klasse=503, start=now, end=bufferDays), key=lambda x: x.start)
-
+                                                                            )
 foundCounter = 0
+
+
 def isInRange(element):
     global foundCounter
     if foundCounter < 2:
@@ -30,6 +37,7 @@ def isInRange(element):
             return element.end > datetime.now()
         return False
     return False
+
 
 filteredLesson = filter(isInRange, currentLessons)
 
@@ -46,7 +54,7 @@ for fach in filteredLesson:
         "end": fach.end.__str__(),
         "differenceHour": difference,
         "countdown": minsLeft,
-        "progressPercent": 100-((minsLeft*100) / difference),
+        "progressPercent": 100 - ((minsLeft * 100) / difference),
         "rooms": [room.name for room in fach.rooms],
         "teachers": [{
             "fullName": teacher.full_name,

@@ -17,9 +17,9 @@
                     </div>
                     <div layout="row" flex layout-margin layout-align="center center">
                         <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
-                            <div style="height: 30px; width: {{$ctrl.currentLesson.progressPercent }}%; background-color: greenyellow; padding: 0; margin: 0;"></div>
+                            <div style="height: 30px; width: {{ $ctrl.currentLesson.progressPercent }}%; background-color: greenyellow; padding: 0; margin: 0;"></div>
                         </div>
-                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.differenceHour | number:0}} min</p>
+                        <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
                     </div>
                 </div>
                 <div layout="row" class="appletBox"  class="nomargin">
