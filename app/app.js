@@ -7,29 +7,28 @@ if(electron.remote.process.argv.includes("--live")) {
 }
 
 // Einziges Modul dieser App und seine Abhängigkeiten
-var app = angular.module("Vorlage", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",
+var app = angular.module("ClassX", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",
     "ngAnimate", "ngMaterial", "ui.router" ]);
 
 
 // Einstellungen für Debugging
-app.config(function($logProvider, $compileProvider, $mdAriaProvider, $qProvider, $httpProvider) {
+app.config(["$logProvider", "$compileProvider", "$mdAriaProvider", "$qProvider", "$httpProvider", function($logProvider, $compileProvider, $mdAriaProvider, $qProvider, $httpProvider) {
     $logProvider.debugEnabled(true);
     $compileProvider.debugInfoEnabled(true);
     $mdAriaProvider.disableWarnings();
     $qProvider.errorOnUnhandledRejections(false);
     $httpProvider.defaults.useXDomain = true;
-});
+}]);
 
 var index = 0;
 let interval;
-app.config(function($routeProvider) {
+app.config(["$routeProvider", function($routeProvider) {
     const handler = throttled(500, (event) => {
         rotatePage();
         clearInterval(interval);
         interval = setInterval(rotatePage, 10000);
     });
     document.addEventListener("keydown", handler);
-
 
     $routeProvider
         .when("/id0", {
@@ -45,11 +44,16 @@ app.config(function($routeProvider) {
     }).when("/id5", {
         templateUrl : "index5.html"
     });
-});
+}]);
 
 interval = setInterval(rotatePage, 10000);
 function rotatePage() {
-    window.location.href="#!id"+index; if(index < 5){index++}else{index = 0;}
+    window.location.href = "#!id" + index;
+    if (index < 5) {
+        index++;
+    } else {
+        index = 0;
+    }
 }
 
 // Debounced Function
@@ -68,15 +72,14 @@ function throttled(delay, fn) {
 // Thema einstellen, mögliche Paletten sind:
 // red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green,
 // light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey
-app.config(function($mdThemingProvider) {
+app.config(["$mdThemingProvider", function($mdThemingProvider) {
     $mdThemingProvider.theme("default")
         .primaryPalette("pink")
         .accentPalette("deep-orange");
-});
-
+}]);
 
 // Datepicker auf AngularJS-Gebietsschema einstellen
-app.config(function($localeProvider, $mdDateLocaleProvider) {
+app.config(["$localeProvider", "$mdDateLocaleProvider", function($localeProvider, $mdDateLocaleProvider) {
     var locale = $localeProvider.$get();
 
     moment.locale(locale.id);
@@ -107,4 +110,4 @@ app.config(function($localeProvider, $mdDateLocaleProvider) {
 
     $mdDateLocaleProvider.msgCalendar = "Kalender";
     $mdDateLocaleProvider.msgOpenCalendar = "Kalender öffnen";
-});
+}]);

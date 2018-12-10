@@ -1,4 +1,4 @@
-angular.module('Vorlage').service('StateService', function(){
+angular.module('ClassX').service('StateService', function(){
     var _states = {};
 
     var _save = function(name, scope, fields) {
@@ -26,7 +26,7 @@ angular.module('Vorlage').service('StateService', function(){
     });
 });
 
-angular.module('Vorlage').service('ApiService', function($interval, $http) {
+angular.module('ClassX').service('ApiService', [ "$interval", "$http", function($interval, $http) {
     /*
     * Object Structure:
     *   request: Request HTTP Object
@@ -121,9 +121,9 @@ angular.module('Vorlage').service('ApiService', function($interval, $http) {
         subscribe: _subscribe,
         unsubscribe: _unsubscribe
     });
-});
+}]);
 
-angular.module('Vorlage').service('PythonApiService', function($interval) {
+angular.module('ClassX').service('PythonApiService', [ "$interval", function($interval) {
     /*
     * Object Structure:
     *   path: Path to Python Script
@@ -223,9 +223,9 @@ angular.module('Vorlage').service('PythonApiService', function($interval) {
         subscribe: _subscribe,
         unsubscribe: _unsubscribe
     });
-});
+}]);
 
-angular.module('Vorlage').service('KeyService', function() {
+angular.module('ClassX').service('KeyService', function() {
     var keys;
     var _readKeys = () => {
         let fs = require('fs');

@@ -1,13 +1,13 @@
 "use strict";
 
-angular.module("Vorlage").component("infobar", {
+angular.module("ClassX").component("infobar", {
     templateUrl: "components/infobar.html",
     controller: "InfobarController",
     bindings: {
     }
 });
 
-app.controller("InfobarController", function ($scope, $interval, ApiService) {
+app.controller("InfobarController", ["$scope", "$interval", "ApiService", function ($scope, $interval, ApiService) {
     this.errorEncountered = false;
 
     this.refreshTime = () => {
@@ -47,4 +47,4 @@ app.controller("InfobarController", function ($scope, $interval, ApiService) {
 
     $interval(this.refreshTime, 1000);
     $interval(this.refreshWifi, 10000);
-});
+}]);

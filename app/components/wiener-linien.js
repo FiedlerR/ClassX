@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("Vorlage").component("wienerLinien", {
+angular.module("ClassX").component("wienerLinien", {
     templateUrl: "components/wiener-linien.html",
     controller: "WienerLinienController",
     bindings: {
@@ -11,7 +11,7 @@ angular.module("Vorlage").component("wienerLinien", {
 });
 
 
-app.controller("WienerLinienController", function ($scope, $interval, $http, ApiService, KeyService) {
+app.controller("WienerLinienController", ["$scope", "ApiService", "KeyService", function ($scope, ApiService, KeyService) {
     this.lines = [];
     this.alreadySet = [];
     this.$onInit = () => {
@@ -77,4 +77,4 @@ app.controller("WienerLinienController", function ($scope, $interval, $http, Api
     $scope.$on('$destroy', () => {
         ApiService.unsubscribe("WienerLinienController_" + this.rbls);
     });
-});
+}]);

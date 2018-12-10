@@ -1,13 +1,13 @@
 "use strict";
 
-angular.module("Vorlage").component("crypto", {
+angular.module("ClassX").component("crypto", {
     templateUrl: "components/crypto.html",
     controller: "CryptoController",
     bindings: {
     }
 });
 
-app.controller("CryptoController", function ($scope, $interval, ApiService) {
+app.controller("CryptoController", ["$scope", "ApiService", function ($scope, ApiService) {
     this.$onInit = () => {
         ApiService.add("CryptoController_BTC", {
             method: 'GET',
@@ -89,4 +89,4 @@ app.controller("CryptoController", function ($scope, $interval, ApiService) {
             change: Math.round(response.response.data.ticker.change * 10000) / 100
         };
     };
-});
+}]);

@@ -1,13 +1,13 @@
 "use strict";
 
-angular.module("Vorlage").component("timeTable", {
+angular.module("ClassX").component("timeTable", {
     templateUrl: "components/time-table.html",
     controller: "TimeTableController",
     bindings: {
     }
 });
 
-app.controller("TimeTableController", function ($scope, $interval, PythonApiService) {
+app.controller("TimeTableController", ["$scope", "PythonApiService", function ($scope, PythonApiService) {
     this.updateData = (response) => {
         let res = JSON.parse(response.response[0]);
         this.currentLesson = res[0];
@@ -24,4 +24,4 @@ app.controller("TimeTableController", function ($scope, $interval, PythonApiServ
     $scope.$on('$destroy', () => {
         PythonApiService.unsubscribe("TimeTableController");
     });
-});
+}]);

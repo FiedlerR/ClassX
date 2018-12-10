@@ -1,12 +1,12 @@
 "use strict";
 
-angular.module("Vorlage").component("digitoring", {
+angular.module("ClassX").component("digitoring", {
     templateUrl: "components/digitoring.html",
     controller: "DigitoringController",
     bindings: {
     }
 });
 
-app.controller("DigitoringController", function ($scope, $interval) {
+app.controller("DigitoringController", ["$scope", function ($scope) {
 
-});
+}]);
