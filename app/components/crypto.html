@@ -3,104 +3,97 @@
     <div layout="row">
         <div layout="column" flex>
             <md-card flex>
-                <md-card-content layout="row" >
+                <md-card-content layout="row" layout-align="center center" >
                 <div layout="column" flex>
-                    <div style="height: 100px; width: 100px; background-color: gray; margin: auto;"></div>
+                    <img src="images/crypto/btc.svg" style="height: 197px; width: 197px; margin: auto;">
                     <p class="appletText centered">Bitcoin</p>
                 </div>
                 <div layout="column" flex>
                     <div>
-                        <p class="appletText centered">Volume:</p>
-                        <p class="appletText appletSemiSide centered">16.049</p>
+                        <p class="appletText centeredGray">Volume:</p>
+                        <p class="appletText appletSemiSide centered" ng-bind="$ctrl.btc.volume"></p>
                     </div>
                     <div>
-                        <p class="appletText centered">Bitstamp</p>
-                        <p class="appletText appletSemiSide centered">12322.02€</p>
+                        <p class="appletText centeredGray">Bitstamp</p>
+                        <p class="appletText appletSemiSide centered" ng-bind=""></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
-                    <div style="height: 30px; width: 30px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText appletSemiSide centered">+2.00%</p>
-                </div>
-                <div flex>
-                    <p class="appletTitle">5.000,23€</p>
+                    <p class="appletTitle" ng-bind="$ctrl.btc.price"></p>
+                    <img  ng-src="{{($ctrl.btc.change > 0) ? 'images/arrows/green_up.svg':'images/arrows/red_down.svg'}}"  style="height: 30px; width: 30px; margin: auto;">
+                    <p class="appletText appletSemiSide centered" ng-style="{ 'color' : ($ctrl.btc.change > 0) ? '#89C136' : '#B3404A' }" ng-bind="$ctrl.btc.change"></p>
                 </div>
                 </md-card-content>
             </md-card>
             <md-card flex>
-                <md-card-content layout="row">
+                <md-card-content layout="row" layout-align="center center">
                 <div layout="column" flex>
-                    <div style="height: 100px; width: 100px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText centered">Bitcoin</p>
+                    <!-- <div style="height: 100px; width: 100px; background-color: gray; margin: auto;"></div> !-->
+                    <img src="images/crypto/xrp.svg" style="height: 197px; width: 197px; margin: auto;">
+                    <p class="appletText centered">Ripple</p>
                 </div>
                 <div layout="column" flex>
                     <div>
-                        <p class="appletText centered">Volume:</p>
-                        <p class="appletText appletSemiSide centered">16.049</p>
+                        <p class="appletText centeredGray">Volume:</p>
+                        <p class="appletText appletSemiSide centered" ng-bind="$ctrl.xrp.volume"></p>
                     </div>
                     <div>
-                        <p class="appletText centered">Bitstamp</p>
-                        <p class="appletText appletSemiSide centered">12322.02€</p>
+                        <p class="appletText centeredGray">Bitstamp</p>
+                        <p class="appletText appletSemiSide centered" ng-bind=""></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
-                    <div style="height: 30px; width: 30px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText appletSemiSide centered">+2.00%</p>
-                </div>
-                <div flex>
-                    <p class="appletTitle centered">5.000,23€</p>
+                    <p class="appletTitle centered" ng-bind="$ctrl.xrp.price"></p>
+                    <img  ng-src="{{($ctrl.xrp.change > 0) ? 'images/arrows/green_up.svg':'images/arrows/red_down.svg'}}"  style="height: 30px; width: 30px; margin: auto;">
+                    <p class="appletText appletSemiSide centered" ng-style="{ 'color' : ($ctrl.xrp.change > 0) ? '#89C136' : '#B3404A' }" ng-bind="$ctrl.xrp.change"></p>
                 </div>
                 </md-card-content>
             </md-card>
         </div>
         <div layout="column" flex>
             <md-card flex>
-                <md-card-content layout="row">
+                <md-card-content layout="row" layout-align="center center">
                 <div layout="column" flex>
-                    <div style="height: 100px; width: 100px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText centered">Bitcoin</p>
+                    <img src="images/crypto/eth.svg" style="height: 197px; width: 197px; margin: auto;">
+                    <p class="appletText centered">Ethereum</p>
                 </div>
                 <div layout="column" flex>
                     <div>
-                        <p class="appletText centered">Volume:</p>
-                        <p class="appletText appletSemiSide centered">16.049</p>
+                        <p class="appletText centeredGray">Volume:</p>
+                        <p class="appletText appletSemiSide centered" ng-bind="$ctrl.eth.volume"></p>
                     </div>
                     <div>
-                        <p class="appletText centered">Bitstamp</p>
-                        <p class="appletText appletSemiSide centered">12322.02€</p>
+                        <p class="appletText centeredGray">Bitstamp</p>
+                        <p class="appletText appletSemiSide centered" ng-bind=""></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
-                    <div style="height: 30px; width: 30px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText appletSemiSide centered">+2.00%</p>
-                </div>
-                <div flex>
-                    <p class="appletTitle centered">5.000,23€</p>
+                    <p class="appletTitle centered" ng-bind="$ctrl.eth.price"></p>
+                    <img  ng-src="{{($ctrl.eth.change > 0) ? 'images/arrows/green_up.svg':'images/arrows/red_down.svg'}}"  style="height: 30px; width: 30px; margin: auto;">
+                    <p class="appletText appletSemiSide centered" ng-style="{ 'color' : ($ctrl.eth.change > 0) ? '#89C136' : '#B3404A' }" ng-bind="$ctrl.eth.change"></p>
                 </div>
                 </md-card-content>
             </md-card>
             <md-card flex>
-                <md-card-content layout="row">
+                <md-card-content layout="row" layout-align="center center">
                 <div layout="column" flex>
-                    <div style="height: 100px; width: 100px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText centered">Bitcoin</p>
+                    <img src="images/crypto/bch.svg" style="height: 197px; width: 197px; margin: auto;">
+                    <p class="appletText centered">Bitcoin Cash</p>
                 </div>
                 <div layout="column" flex>
                     <div>
-                        <p class="appletText centered">Volume:</p>
-                        <p class="appletText appletSemiSide centered">16.049</p>
+                        <p class="appletText centeredGray">Volume:</p>
+                        <p class="appletText appletSemiSide centered" ng-bind="$ctrl.bch.volume"></p>
                     </div>
                     <div>
-                        <p class="appletText centered">Bitstamp</p>
-                        <p class="appletText appletSemiSide centered">12322.02€</p>
+                        <p class="appletText centeredGray">Bitstamp</p>
+                        <p class="appletText appletSemiSide centered" ng-bind=""></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
-                    <div style="height: 30px; width: 30px; background-color: gray; margin: auto;"></div>
-                    <p class="appletText appletSemiSide centered">+2.00%</p>
-                </div>
-                <div flex>
-                    <p class="appletTitle centered">5.000,23€</p>
+                    <p class="appletTitle centered" ng-bind="$ctrl.bch.price"></p>
+                    <img  ng-src="{{($ctrl.bch.change > 0) ? 'images/arrows/green_up.svg':'images/arrows/red_down.svg'}}"  style="height: 30px; width: 30px; margin: auto;">
+                    <p class="appletText appletSemiSide centered" ng-style="{ 'color' : ($ctrl.bch.change > 0) ? '#89C136' : '#B3404A' }" ng-bind="$ctrl.bch.change"></p>
                 </div>
                 </md-card-content>
             </md-card>

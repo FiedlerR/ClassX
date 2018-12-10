@@ -1,14 +1,14 @@
 "use strict";
 
-describe("Vorlage", function() {
+describe("ClassX", function() {
 
     beforeAll(function() {
-        browser.get("angularjs-vorlage/app/index.html");
+        browser.get("angularjs-classx/app/index.html");
     });
 
 
     it("wird geladen", function() {
-        expect(browser.getTitle()).toEqual("Vorlage");
+        expect(browser.getTitle()).toEqual("ClassX");
     });
 
 

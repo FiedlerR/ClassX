@@ -1264,11 +1264,11 @@ angular.mock.dump = function(object) {
  *
  * ### Regex parameter matching
  *
- * If an expectation or definition uses a **regex** to match the URL, you can provide an array of **keys** via a
+ * If an expectation or definition uses a **regex** to match the URL, you can provide an array of **.keys** via a
  * `params` argument. The index of each **key** in the array will match the index of a **group** in the
  * **regex**.
  *
- * The `params` object in the **callback** will now have properties with these keys, which hold the value of the
+ * The `params` object in the **callback** will now have properties with these .keys, which hold the value of the
  * corresponding **group** in the **regex**.
  *
  * This also applies to the `when` and `expect` shortcut methods.
@@ -1476,7 +1476,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   data string and returns true if the data is as expected.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1567,7 +1567,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current definition.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1583,7 +1583,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current definition.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1599,7 +1599,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current definition.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1617,7 +1617,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   data string and returns true if the data is as expected.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1635,7 +1635,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   data string and returns true if the data is as expected.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1649,7 +1649,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
    *   and returns true if the url matches the current definition.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled.
@@ -1718,7 +1718,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *  is in JSON format.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *  request is handled. You can save this object for later use and invoke `respond` again in
    *  order to change how a matched request is handled.
@@ -1759,7 +1759,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current expectation.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    * request is handled. You can save this object for later use and invoke `respond` again in
    * order to change how a matched request is handled. See #expect for more info.
@@ -1775,7 +1775,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current expectation.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1791,7 +1791,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *   and returns true if the url matches the current expectation.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1810,7 +1810,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *  is in JSON format.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1829,7 +1829,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *  is in JSON format.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1848,7 +1848,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *  is in JSON format.
    * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
    *   object and returns true if the headers match the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -1862,7 +1862,7 @@ function createHttpBackendMock($rootScope, $timeout, $delegate, $browser) {
    *
    * @param {string|RegExp|function(string)=} url HTTP url or function that receives an url
    *   and returns true if the url matches the current expectation.
-   * @param {(Array)=} keys Array of keys to assign to regex matches in request url described above.
+   * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described above.
    * @returns {requestHandler} Returns an object with `respond` method that controls how a matched
    *   request is handled. You can save this object for later use and invoke `respond` again in
    *   order to change how a matched request is handled.
@@ -2620,7 +2620,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *   data string and returns true if the data is as expected.
  * @param {(Object|function(Object))=} headers HTTP headers or function that receives http header
  *   object and returns true if the headers match the current definition.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2650,7 +2650,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
  *   and returns true if the url matches the current definition.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2667,7 +2667,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
  *   and returns true if the url matches the current definition.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2684,7 +2684,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
  *   and returns true if the url matches the current definition.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2703,7 +2703,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {(string|RegExp|function(string))=} data HTTP request body or function that receives
  *   data string and returns true if the data is as expected.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2722,7 +2722,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {(string|RegExp|function(string))=} data HTTP request body or function that receives
  *   data string and returns true if the data is as expected.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2741,7 +2741,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * @param {(string|RegExp|function(string))=} data HTTP request body or function that receives
  *   data string and returns true if the data is as expected.
  * @param {(Object|function(Object))=} headers HTTP headers.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -2757,7 +2757,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *
  * @param {string|RegExp|function(string)=} url HTTP url or function that receives a url
  *   and returns true if the url matches the current definition.
- * @param {(Array)=} keys Array of keys to assign to regex matches in request url described on
+ * @param {(Array)=} .keys Array of .keys to assign to regex matches in request url described on
  *   {@link ngMock.$httpBackend $httpBackend mock}.
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled. You can save this object for later use and invoke
@@ -3337,7 +3337,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
    *  - `keycode`: [keyCode](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keycode)
    *    for keyboard events (keydown, keypress, and keyup).
    *
-   *  - `keys`: an array of possible modifier keys (ctrl, alt, shift, meta) for
+   *  - `.keys`: an array of possible modifier .keys (ctrl, alt, shift, meta) for
    *    [MouseEvent](https://developer.mozilla.org/docs/Web/API/MouseEvent) and
    *    keyboard events (keydown, keypress, and keyup).
    *

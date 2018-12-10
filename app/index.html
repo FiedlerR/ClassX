@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="de" ng-app="Vorlage">
+<html lang="de" ng-app="ClassX">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>Vorlage</title>
+    <title>ClassX</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="animation.css">
 
     <link rel="stylesheet" href="vendor/material-icons-3.0.1/material-icons.css">
     <link rel="stylesheet" href="vendor/roboto/roboto.css">
-
-    <link href="fonts/OpenSans/OpenSans-Regular.ttf">
-  
     <link rel="stylesheet" href="vendor/angular-material-1.1.10/angular-material.min.css">
-  
     <link rel="stylesheet" href="app.css">
     
     <script src="vendor/jquery-3.3.1/jquery.min.js"></script>
@@ -28,25 +24,28 @@
     <script src="vendor/angularjs-1.7.2/angular-animate.min.js"></script>
     <script src="vendor/angularjs-1.7.2/angular-aria.min.js"></script>
     <script src="vendor/angularjs-1.7.2/i18n/angular-locale_de.js"></script>
-
     <script src="vendor/angular-material-1.1.10/angular-material.min.js"></script>
     <script src="vendor/angular-ui-router-1.0.18/angular-ui-router.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-
+    <script src="vendor/angularjs-1.7.2/angular-route.min.js"></script>
 
     <script src="app.js"></script>
+
+    <script src="services/StateService.js"></script>
+    <script src="services/ApiService.js"></script>
+    <script src="services/PythonApiService.js"></script>
 
     <script src="components/wiener-linien.js"></script>
     <script src="components/infobar.js"></script>
     <script src="components/crypto.js"></script>
     <script src="components/time-table.js"></script>
+    <script src="components/digitoring.js"></script>
   </head>
 
   <body layout="column">
-  <!--  <md-content>
-      <time-table></time-table>
-    </md-content> !-->
-    <div class="page" ng-view></div>
-    <infobar display-error=""></infobar>
-  </body>
+  <div ng-cloak="true" class="page" ng-view></div>
+  <!--<md-content>
+   <time-table></time-table>
+ </md-content>!-->
+   <infobar display-error=""></infobar>
+ </body>
 </html>
