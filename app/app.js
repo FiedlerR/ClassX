@@ -1,10 +1,4 @@
 "use strict";
-const electron = require('electron');
-if(electron.remote.process.argv.includes("--live")) {
-    const mainWindow = electron.remote.getCurrentWindow();
-    mainWindow.setFullScreen(true);
-    mainWindow.setMenu(null);
-}
 
 // Einziges Modul dieser App und seine Abhängigkeiten
 var app = angular.module("ClassX", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",
