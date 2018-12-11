@@ -14,8 +14,8 @@
                         <p class="volumeInfoText centered" ng-bind="$ctrl.btc.volume"></p>
                     </div>
                     <div>
-                        <p class="volumeText centeredGray">Bitstamp</p>
-                        <p class="volumeInfoText centered" ng-bind=""></p>
+                        <p class="volumeText centeredGray" >{{$ctrl.btc.market}}</p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.btc.marketPrice"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -38,8 +38,8 @@
                         <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.volume"></p>
                     </div>
                     <div>
-                        <p class="volumeText centeredGray">Bitstamp</p>
-                        <p class="volumeInfoText centered" ng-bind=""></p>
+                        <p class="volumeText centeredGray">{{$ctrl.xrp.market}}</p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.marketPrice"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -63,8 +63,8 @@
                         <p class="volumeInfoText centered" ng-bind="$ctrl.eth.volume"></p>
                     </div>
                     <div>
-                        <p class="volumeText centeredGray">Bitstamp</p>
-                        <p class="volumeInfoText centered" ng-bind=""></p>
+                        <p class="volumeText centeredGray">{{$ctrl.eth.market}}</p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.eth.marketPrice"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -77,8 +77,8 @@
             <md-card flex>
                 <md-card-content layout="row" layout-align="center center">
                 <div layout="column" flex>
-                    <img src="images/crypto/bch.svg" style="height: 197px; width: 197px; margin: auto;">
-                    <p class="appletText centered">Bitcoin Cash</p>
+                    <img src="images/crypto/xmr.svg" style="height: 197px; width: 197px; margin: auto;">
+                    <p class="appletText centered">Monero</p>
                 </div>
                 <div layout="column" flex>
                     <div>
@@ -86,8 +86,8 @@
                         <p class="volumeInfoText centered" ng-bind="$ctrl.bch.volume"></p>
                     </div>
                     <div>
-                        <p class="volumeText centeredGray">Bitstamp</p>
-                        <p class="volumeInfoText centered" ng-bind=""></p>
+                        <p class="volumeText centeredGray">{{$ctrl.bch.market}}</p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.bch.marketPrice"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">

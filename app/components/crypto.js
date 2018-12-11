@@ -38,7 +38,7 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
 
         ApiService.add("CryptoController_BCH", {
             method: 'GET',
-            url: 'https://api.cryptonator.com/api/full/BCH-eur',
+            url: 'https://api.cryptonator.com/api/full/XMR-eur',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -57,11 +57,14 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
         ApiService.unsubscribe("CryptoController_BCH");
     });
 
+
     this.updateData_btc = (response) => {
         this.btc = {
             price: (Math.round(response.response.data.ticker.price * 100) / 100) + '€',
             volume: Math.round(response.response.data.ticker.volume * 100) / 100,
-            change: Math.round(response.response.data.ticker.change * 10000) / 100
+            change: Math.round(response.response.data.ticker.change * 10000) / 100,
+            market: response.response.data.ticker.markets[0].market,
+            marketPrice: (Math.round(response.response.data.ticker.markets[0].price *100) /100) + '€'
         };
     };
 
@@ -69,7 +72,9 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
         this.eth = {
             price: (Math.round(response.response.data.ticker.price * 100) / 100) + '€',
             volume: Math.round(response.response.data.ticker.volume),
-            change: Math.round(response.response.data.ticker.change * 10000) / 100
+            change: Math.round(response.response.data.ticker.change * 10000) / 100,
+            market: response.response.data.ticker.markets[0].market,
+            marketPrice: (Math.round(response.response.data.ticker.markets[0].price *100) /100) + '€'
         };
     };
 
@@ -77,7 +82,9 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
         this.xrp = {
             price: (Math.round(response.response.data.ticker.price * 100) / 100) + '€',
             volume: Math.round(response.response.data.ticker.volume),
-            change: Math.round(response.response.data.ticker.change * 10000) / 100
+            change: Math.round(response.response.data.ticker.change * 10000) / 100,
+            market: response.response.data.ticker.markets[0].market,
+            marketPrice: (Math.round(response.response.data.ticker.markets[0].price *100) /100) + '€'
         };
     };
 
@@ -85,7 +92,9 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
         this.bch = {
             price: (Math.round(response.response.data.ticker.price * 100) / 100) + '€',
             volume: Math.round(response.response.data.ticker.volume),
-            change: Math.round(response.response.data.ticker.change * 10000) / 100
+            change: Math.round(response.response.data.ticker.change * 10000) / 100,
+            market: response.response.data.ticker.markets[0].market,
+            marketPrice: (Math.round(response.response.data.ticker.markets[0].price *100) /100) + '€'
         };
     };
 }]);

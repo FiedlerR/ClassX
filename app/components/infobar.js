@@ -33,6 +33,7 @@ app.controller("InfobarController", ["$scope", "$interval", "ApiService", functi
                 }
             }
         });
+        console.log(this.level);
     };
 
     this.$onInit = () => {
