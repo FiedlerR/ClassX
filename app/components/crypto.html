@@ -11,11 +11,11 @@
                 <div layout="column" flex>
                     <div>
                         <p class="volumeText centeredGray">Volume</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.btc.volume"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.btc.volume | number:2"></p>
                     </div>
                     <div>
                         <p class="volumeText centeredGray" >{{$ctrl.btc.market}}</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.btc.marketPrice"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.btc.marketPrice | number:2"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -35,11 +35,11 @@
                 <div layout="column" flex>
                     <div>
                         <p class="volumeText centeredGray">Volume</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.volume"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.volume | number:2"></p>
                     </div>
                     <div>
                         <p class="volumeText centeredGray">{{$ctrl.xrp.market}}</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.marketPrice"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.xrp.marketPrice | number:2"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -60,11 +60,11 @@
                 <div layout="column" flex>
                     <div>
                         <p class="volumeText centeredGray">Volume</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.eth.volume"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.eth.volume | number:2"></p>
                     </div>
                     <div>
                         <p class="volumeText centeredGray">{{$ctrl.eth.market}}</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.eth.marketPrice"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.eth.marketPrice | number:2"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
@@ -83,11 +83,11 @@
                 <div layout="column" flex>
                     <div>
                         <p class="volumeText centeredGray">Volume</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.bch.volume"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.bch.volume | number:2"></p>
                     </div>
                     <div>
                         <p class="volumeText centeredGray">{{$ctrl.bch.market}}</p>
-                        <p class="volumeInfoText centered" ng-bind="$ctrl.bch.marketPrice"></p>
+                        <p class="volumeInfoText centered" ng-bind="$ctrl.bch.marketPrice | number:2"></p>
                     </div>
                 </div>
                 <div layout="column" flex style="margin: auto;">
