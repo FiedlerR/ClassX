@@ -44,7 +44,6 @@ app.controller("CryptoController", ["$scope", "ApiService", function ($scope, Ap
                 'Content-Type': 'application/json'
             }
         }, 60000);
-
         ApiService.subscribe("CryptoController_BTC", this.updateData_btc);
         ApiService.subscribe("CryptoController_ETH", this.updateData_eth);
         ApiService.subscribe("CryptoController_XRP", this.updateData_xrp);
