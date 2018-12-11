@@ -9,6 +9,7 @@ angular.module("ClassX").component("timeTable", {
 
 app.controller("TimeTableController", ["$scope", "PythonApiService", function ($scope, PythonApiService) {
     this.updateData = (response) => {
+        console.log(response);
         let res = JSON.parse(response.response[0]);
         this.currentLesson = res[0];
         this.nextLesson = res[1];
