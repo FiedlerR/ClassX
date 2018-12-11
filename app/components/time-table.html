@@ -7,7 +7,7 @@
                 <div layout="column" layout-align="space-around center" class="tableBoxHeight">
                     <div layout="row" layout-align="center center" class="appletBox">
                             <img ng-src="images/school/subject.svg" class="svgIcon" style="margin-right: 24px;">
-                            <p class="appletSemiSide centered">{{$ctrl.nextLesson.subjects[0].long}}</p>
+                            <p class="appletSemiSide centered">{{$ctrl.currentLesson.subjects[0].long}}</p>
                     </div>
                     <div layout="row" layout-align="space-between center" class="appletBox">
                         <div layout="row" flex layout-margin layout-align="center center">
@@ -16,7 +16,7 @@
                         </div>
                         <div layout="row" flex layout-margin layout-align="center center">
                             <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
-                                <div class="loadingBar" style="width: {{ $ctrl.currentLesson.progressPercent }}"></div>
+                                <div class="loadingBar" style="width: {{ $ctrl.currentLesson.progressPercent }}%;"></div>
                             </div>
                             <p class="appletSemiSide centered">{{$ctrl.currentLesson.countdown | number:0}} min</p>
                         </div>
