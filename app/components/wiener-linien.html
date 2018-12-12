@@ -3,33 +3,33 @@
     <div layout="row">
         <md-card md-theme-watch flex="70" layout-margin>
             <md-card-content layout="column">
-                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 10" layout="column">
+                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 9" layout="column">
                     <div layout="row">
-                        <p class="appletText" flex="25">{{train.timeString}} <span class="appletSideInformation">({{train.delay}})</span></p>
+                        <p class="trainInfoText" flex="25">{{train.timeString}} <span class="appletSideInformation">(+{{train.delay}})</span></p>
                         <img class="appletWarningIcon" src="images/warning.svg" ng-if="train.trafficJam">
                         <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam">Stau</p>
                         <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
-                        <div flex="10" layout="row"  layout-align="center center">
-                            <p class="appletText" >{{train.line}}</p>
+                        <div flex="10" layout="row"  layout-align="end center">
+                            <p class="trainInfoText" >{{train.line}}</p>
                             <img ng-src="{{train.symbolType}}" width="26" height="32">
                         </div>
-                        <p class="trainDestination appletText" flex>{{train.destination}}</p>
+                        <p class="trainDestination trainInfoText" flex>{{train.destination}}</p>
                     </div>
                     <hr ng-hide="$last">
                 </div>
             </md-card-content>
         </md-card>
         <md-card md-theme-watch flex="30" layout-margin>
-            <md-card-content layout-margin >
-                <p class="appletTitle">{{$ctrl.station}}</p>
-                <div layout="column"  layout-align="center center">
-                    <img class="appleStationImage" ng-src="{{$ctrl.image}}" >
+            <md-card-content layout="column" layout-align="start center" style="height: 100%">
+                <div layout="column" layout-align="space-between center">
+                    <p class="appletTitle">{{$ctrl.station}}</p>
+                        <img class="appleStationImage" ng-src="{{$ctrl.image}}" >
                 </div>
-                <div class="appletLineBox" >
+                <div class="appletLineBox"  layout-margin>
                     <!-- <p class="appletStationLineText">Linien</p> !-->
-                    <div  layout="row" layout-align="center center" style="flex-wrap: wrap;">
-                        <div class="nomargin"  ng-repeat="line in $ctrl.lines" style=" width: 50%;">
-                            <div layout="row"  layout-align="center center">
+                    <div  layout="row" layout-align="center center" layout-wrap>
+                        <div class="nomargin lineBoxItems"  ng-repeat="line in $ctrl.lines">
+                            <div layout="row"  layout-align="start center">
                                 <img ng-src="{{line.symbolType}}" width="26" height="32">
                                 <p class="appletStationLines">{{line.name}}</p>
                             </div>

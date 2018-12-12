@@ -4,15 +4,16 @@ let win;
 
 function createWindow () {
     // Create the browser window.
+
     win = new BrowserWindow({
-        width: 600,
+        width: 800,
         height: 600,
         backgroundColor: '#ffffff',
+        fullscreen: true,
+        autoHideMenuBar: true,
         "web-preferences": { "web-security": false }
         //icon: `file://${__dirname}/dist/assets/logo.png`
     })
-
-
     win.loadFile(`app/index.html`)
 
     //// uncomment below to open the DevTools.
