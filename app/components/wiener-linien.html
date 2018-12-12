@@ -3,7 +3,7 @@
     <div layout="row">
         <md-card md-theme-watch flex="70" layout-margin>
             <md-card-content layout="column">
-                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 10" layout="column">
+                <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 9" layout="column">
                     <div layout="row">
                         <p class="trainInfoText" flex="25">{{train.timeString}} <span class="appletSideInformation">(+{{train.delay}})</span></p>
                         <img class="appletWarningIcon" src="images/warning.svg" ng-if="train.trafficJam">
