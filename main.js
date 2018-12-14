@@ -22,6 +22,7 @@ function createWindow () {
             width: 800,
             height: 600,
             fullscreen: true,
+            frame: false,
             backgroundColor: '#ffffff',
             "web-preferences": {
                 "web-security": true,
