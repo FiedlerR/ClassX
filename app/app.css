@@ -86,6 +86,10 @@ md-card {
     margin-bottom: 0.5em;
 }
 
+.hourTitle{
+    margin-bottom: 0;
+}
+
 .appletSideInformation {
     font-weight: 100;
     font-size: 20px;
@@ -116,7 +120,7 @@ md-card {
 }
 
 .tableBoxHeight {
-    height: 500px;
+    height: 450px;
 }
 
 .appletLineBox {
@@ -197,7 +201,7 @@ md-card {
 }
 
 .lineBoxItems {
-    margin: 15px;
+    margin: 5px;
 }
 
 .loadingBar {
