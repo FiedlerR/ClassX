@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "main.js",
   "scripts": {
-    "start": "electron . --keyFile=app/config/keys"
+    "start": "electron . --keyFile=app/config/.keys --untis=app/api/api.py"
   },
   "devDependencies": {
     "electron": "^3.0.8",

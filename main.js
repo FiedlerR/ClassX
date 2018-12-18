@@ -11,6 +11,12 @@ function createWindow () {
         if(keyArg.length === 0) throw new Error("Add path to key file with --keyFile=FILEPATH")
         keyPath = path.resolve(keyArg[0].split("=")[1]);
         if(!fs.existsSync(keyPath)) throw new Error("Key File does not exists");
+
+
+        const pythonFileArg = process.argv.filter(x => x.includes("--untis"));
+        if(pythonFileArg.length === 0) throw new Error("Add python webuntis api file with --untis=FILEPATH")
+        keyPath = path.resolve(pythonFileArg[0].split("=")[1]);
+        if(!fs.existsSync(keyPath)) throw new Error("Python Script does not exists");
     } catch(e) {
         console.error(e);
         process.exit("1");
