@@ -60,7 +60,6 @@ app.controller("CryptoController", ["$scope", "ApiService","KeyService", functio
 
 
     this.updateData_btc = (response) => {
-        console.log(response.response.data.RAW.BTC.EUR.CHANGEPCTDAY);
         this.btc = {
             price: (Math.round(response.response.data.RAW.BTC.EUR.PRICE * 100) / 100) + '€',
             volume: Math.round(response.response.data.RAW.BTC.EUR.VOLUMEDAY * 100) / 100,

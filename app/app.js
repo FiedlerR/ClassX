@@ -1,4 +1,9 @@
 "use strict";
+const electron = require('electron');
+const path = require('path');
+
+const keyArg = electron.remote.process.argv.filter(x => x.includes("--keyFile"));
+const keyPath = path.resolve(keyArg[0].split("=")[1]);
 
 // Einziges Modul dieser App und seine Abhängigkeiten
 var app = angular.module("ClassX", [ "ngResource", "ngMessages", "ngLocale", "ngSanitize","ngRoute",

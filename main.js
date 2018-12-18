@@ -1,25 +1,45 @@
 const { app, BrowserWindow } = require('electron')
-
+const fs = require('fs');
+const path = require('path');
 let win;
 
 function createWindow () {
     // Create the browser window.
 
-    win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        backgroundColor: '#ffffff',
-        fullscreen: true,
-        autoHideMenuBar: true,
-        "web-preferences": { "web-security": false }
-        //icon: `file://${__dirname}/dist/assets/logo.png`
-    })
+    try {
+        const keyArg = process.argv.filter(x => x.includes("--keyFile"));
+        if(keyArg.length === 0) throw new Error("Add path to key file with --keyFile=FILEPATH")
+        keyPath = path.resolve(keyArg[0].split("=")[1]);
+        if(!fs.existsSync(keyPath)) throw new Error("Key File does not exists");
+    } catch(e) {
+        console.error(e);
+        process.exit("1");
+    }
+
+    let windowOptions;
+    if(process.argv.includes("--live")) {
+        windowOptions = {
+            width: 800,
+            height: 600,
+            fullscreen: true,
+            frame: false,
+            backgroundColor: '#ffffff',
+            "web-preferences": {
+                "web-security": true,
+                devTools: false
+            }
+        }
+    } else {
+        windowOptions = {
+            width: 800,
+            height: 600,
+            backgroundColor: '#ffffff',
+            "web-preferences": {"web-security": false}
+        }
+    }
+    win = new BrowserWindow(windowOptions);
     win.loadFile(`app/index.html`)
 
-    //// uncomment below to open the DevTools.
-    win.webContents.openDevTools()
-
-    // Event when the window is closed.
     win.on('closed', function () {
         win = null
     })

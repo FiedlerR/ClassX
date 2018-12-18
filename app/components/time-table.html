@@ -33,7 +33,7 @@
                                 <img ng-src="images/school/subject.svg" class="svgIcon">
                                 <p class="appletSemiSide centered">PLF</p>
                             </div>
-                            <div layout="row" layout-margin  style="">
+                            <div ng-if="$ctrl.currentLesson.rooms.length !== 0" layout="row" layout-margin  style="">
                                 <img ng-src="images/school/room.svg" class="svgIcon">
                                 <p class="appletSemiSide centered">{{$ctrl.currentLesson.rooms[0]}}</p>
                             </div>
@@ -57,7 +57,7 @@
                             <img ng-src="images/school/teacher.svg" class="svgIcon">
                             <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                         </div>
-                        <div layout="row" layout-margin layout-align="start center">
+                        <div ng-if="$ctrl.nextLesson.rooms.length !== 0" layout="row" layout-margin layout-align="start center">
                             <img ng-src="images/school/room.svg" class="svgIcon">
                             <p class="appletSemiSide centered">{{$ctrl.nextLesson.rooms[0]}}</p>
                         </div>
