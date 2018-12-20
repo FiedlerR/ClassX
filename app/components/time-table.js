@@ -17,7 +17,7 @@ app.controller("TimeTableController", ["$scope", "PythonApiService", function ($
     };
 
     this.$onInit = () => {
-        PythonApiService.add("TimeTableController", "./app/api/api.py", {args: [keyPath]}, 60000);
+        PythonApiService.add("TimeTableController", pythonPath, {args: [keyPath]}, 60000);
         PythonApiService.subscribe("TimeTableController", this.updateData);
     };
 

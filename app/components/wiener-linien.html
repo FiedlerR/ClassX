@@ -6,9 +6,9 @@
                 <div class="nomargin" ng-repeat="train in $ctrl.trains | limitTo: 9" layout="column">
                     <div layout="row">
                         <p class="trainInfoText" flex="25">{{train.timeString}} <span class="appletSideInformation">(+{{train.delay}})</span></p>
-                        <img class="appletWarningIcon" src="images/warning.svg" ng-if="train.trafficJam">
-                        <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam">Stau</p>
-                        <p class="appletText appletWarning" flex="20" ng-if="!train.trafficJam"></p>
+                        <img class="appletWarningIcon" src="images/warning.svg" flex="5"  ng-if="train.trafficJam">
+                        <p class="appletText appletWarning" flex="10" ng-if="train.trafficJam">Stau</p>
+                        <p class="appletText appletWarning" flex="20" ng-if="train.trafficJam"></p>
                         <div flex="10" layout="row"  layout-align="end center">
                             <p class="trainInfoText" >{{train.line}}</p>
                             <img ng-src="{{train.symbolType}}" width="26" height="32">
