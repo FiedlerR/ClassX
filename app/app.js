@@ -1,7 +1,8 @@
 "use strict";
 const electron = require('electron');
 const path = require('path');
-
+const os = require('os');
+const { exec } = require('child_process');
 const keyArg = electron.remote.process.argv.filter(x => x.includes("--keyFile"));
 const keyPath = path.resolve(keyArg[0].split("=")[1]);
 
