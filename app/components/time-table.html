@@ -2,7 +2,7 @@
     <p class="pageTitle">Stundenplan</p>
     <div layout="row">
         <md-card flex="70">
-            <md-card-content layout="column"  layout-padding>
+            <md-card-content layout="column" layout-margin layout-padding>
                 <p class="hourTitle appletTitle">Derzeitige Stunde</p>
                 <div layout="column" layout-align="space-around center" class="tableBoxHeight">
                     <div layout="row" layout-align="center center" class="appletBox">
@@ -10,11 +10,11 @@
                             <p class="appletSemiSide centered">{{$ctrl.currentLesson.subjects[0].long}}</p>
                     </div>
                     <div layout="row" layout-align="space-between center" class="appletBox">
-                        <div layout="row" flex  layout-align="center center">
+                        <div layout-margin layout="row" flex  layout-align="center center">
                             <img ng-src="images/school/time.svg" class="svgIcon">
                             <p class="appletSemiSide centered">{{$ctrl.currentLesson.start | date:"H:mm"}} - {{$ctrl.currentLesson.end | date:"H:mm"}}</p>
                         </div>
-                        <div layout="row" flex  layout-align="center center">
+                        <div layout="row" flex layout-margin layout-align="center center">
                             <div style="height: 30px; width: 200px; background-color: gray; margin-top: auto; margin-bottom: auto; padding: 0;">
                                 <div class="loadingBar" style="width: {{ $ctrl.currentLesson.progressPercent }}%;"></div>
                             </div>
@@ -23,17 +23,19 @@
                     </div>
                     <div layout="row" class="bigAppletBox appletBox" layout-align="space-between center"  class="nomargin">
                         <div layout="column" layout-align="center center" flex>
-                            <div layout="row"  layout-align ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
+                            <div layout="row" layout-margin layout-align ng-repeat="teacher in $ctrl.currentLesson.teachers | limitTo: 2">
                                 <img ng-src="images/school/teacher.svg" class="svgIcon">
                                 <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                             </div>
                         </div>
                         <div layout="column" layout-align="center center" flex >
-                            <div layout="row"    style="">
+                            <!--
+                            <div layout="row" layout-margin style="">
                                 <img ng-src="images/school/subject.svg" class="svgIcon">
                                 <p class="appletSemiSide centered">PLF</p>
                             </div>
-                            <div ng-if="$ctrl.currentLesson.rooms.length !== 0" layout="row"   style="">
+                            !-->
+                            <div ng-if="$ctrl.currentLesson.rooms.length !== 0" layout="row"  layout-margin style="">
                                 <img ng-src="images/school/room.svg" class="svgIcon">
                                 <p class="appletSemiSide centered">{{$ctrl.currentLesson.rooms[0]}}</p>
                             </div>
@@ -43,7 +45,7 @@
             </md-card-content>
         </md-card>
         <md-card flex="30">
-            <md-card-content layout="column"  layout-padding>
+            <md-card-content layout="column" layout-margin layout-padding>
                 <p class="hourTitle appletTitle" >Nächste Stunde</p>
 
                 <div layout="column" layout-align="space-around center" class="tableBoxHeight">
@@ -53,11 +55,11 @@
                     </div>
 
                     <div layout="column" layout-align="space-around center" class="nextHourInfoBox appletBox">
-                        <div layout="row"  layout-align="start center" ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
+                        <div layout="row"  layout-align="start center" layout-margin ng-repeat="teacher in $ctrl.nextLesson.teachers | limitTo: 2">
                             <img ng-src="images/school/teacher.svg" class="svgIcon">
                             <p class="appletSemiSide centered">{{teacher.fullName}}</p>
                         </div>
-                        <div ng-if="$ctrl.nextLesson.rooms.length !== 0" layout="row"  layout-align="start center">
+                        <div ng-if="$ctrl.nextLesson.rooms.length !== 0" layout-margin layout="row"  layout-align="start center">
                             <img ng-src="images/school/room.svg" class="svgIcon">
                             <p class="appletSemiSide centered">{{$ctrl.nextLesson.rooms[0]}}</p>
                         </div>
