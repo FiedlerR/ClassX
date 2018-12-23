@@ -18,6 +18,7 @@ angular.module('ClassX').service('PythonApiService', [ "$interval", function($in
 
         python.run(req.path, req.arguments, (err, response) => {
             if(err) {
+                console.error(err);
                 req.lastRunPass = false;
             } else {
                 req.response = response;
