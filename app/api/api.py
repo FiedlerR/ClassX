@@ -16,11 +16,17 @@ s = webuntis.Session(
 ).login()
 
 now = datetime.now()
-bufferDays = now + timedelta(days=3)
+counter = 3
+bufferDays = now + timedelta(days=counter)
 
 # currentLessons = sorted(s.timetable(klasse=503, start=now, end=bufferDays), key=lambda x: x.start)
-currentLessons = s.timetable(klasse=503, start=now, end=bufferDays).combine(combine_breaks=True)
-
+while True:
+    currentLessons = s.timetable(klasse=503, start=now, end=bufferDays).combine(combine_breaks=True)
+    if currentLessons:
+        break
+    counter += 10
+    bufferDays = now + timedelta(days=counter)
+    
 #s.exams(start=now, end=now + timedelta(days=3))
 
 # for x in range(0, currentLessons.__len__()):
@@ -41,8 +47,10 @@ filteredLesson = filter(isInRange, currentLessons)
 
 data = []
 for fach in filteredLesson:
-    minsLeft = (fach.end - datetime.now()).total_seconds() / 60
     difference = (fach.end - fach.start).total_seconds() / 60
+    minsLeft = (fach.end - datetime.now()).total_seconds() / 60
+    if minsLeft > difference:
+        minsLeft = difference
     # fach._data holds json
     data.append({
         "subjects": [{

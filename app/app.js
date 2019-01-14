@@ -28,6 +28,7 @@ let interval;
 app.config(["$routeProvider", function($routeProvider) {
     rotatePage();
     const handler = throttled(500, (event) => {
+        event.preventDefault(); // Stop default Event
         rotatePage();
         clearInterval(interval);
         interval = setInterval(rotatePage, 10000);

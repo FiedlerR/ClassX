@@ -20,6 +20,7 @@ angular.module('ClassX').service('ApiService', [ "$interval", "$http", function(
                 req.callback(req);
             }
         }, response => {
+            console.error(response);
             req.lastRunPass = false;
         });
     };
