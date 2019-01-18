@@ -3,9 +3,6 @@ window.addEventListener("keydown", event => {
     event.preventDefault();
 });
 // Security measure for not opening the developer console
-
-
-
 const electron = require('electron');
 const path = require('path');
 const os = require('os');
@@ -122,3 +119,5 @@ app.config(["$localeProvider", "$mdDateLocaleProvider", function($localeProvider
     $mdDateLocaleProvider.msgCalendar = "Kalender";
     $mdDateLocaleProvider.msgOpenCalendar = "Kalender öffnen";
 }]);
+
+particlesJS.load('body', "config/particles.json");
