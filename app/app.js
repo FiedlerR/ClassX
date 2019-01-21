@@ -1,4 +1,8 @@
 "use strict";
+window.addEventListener("keydown", event => {
+    event.preventDefault();
+});
+// Security measure for not opening the developer console
 const electron = require('electron');
 const path = require('path');
 const os = require('os');
@@ -27,13 +31,13 @@ var index = 0;
 let interval;
 app.config(["$routeProvider", function($routeProvider) {
     rotatePage();
-    const handler = throttled(500, (event) => {
-        event.preventDefault(); // Stop default Event
+    const handler = throttled(500, event => {
+        event.preventDefault();
         rotatePage();
         clearInterval(interval);
         interval = setInterval(rotatePage, 10000);
     });
-    document.addEventListener("keydown", handler);
+    window.addEventListener("keydown", handler);
 
     $routeProvider.when("/id0", {
         templateUrl : "index0.html"
@@ -115,3 +119,5 @@ app.config(["$localeProvider", "$mdDateLocaleProvider", function($localeProvider
     $mdDateLocaleProvider.msgCalendar = "Kalender";
     $mdDateLocaleProvider.msgOpenCalendar = "Kalender öffnen";
 }]);
+
+particlesJS.load('body', "config/particles.json");
